@@ -106,7 +106,7 @@
 
               </p>
             </td>
-            <td width="40%"><img class="image-cropper" src="img/500px-0025Pikachu.png"></td>
+            <td width="40%"><img class="image-cropper" src="img/avatar.jpeg"></td>
           </tr>
         </table>
 
@@ -123,69 +123,128 @@
 
           <tr>
             <td width="30%">
-              <img id="img-opt" src="img/custom_diffusion.gif" alt="project_img" width="160" style="border-style: none">
+              <img id="img-opt" src="img/incompatible-transfer.png" alt="project_img" width="160" style="border-style: none">
             </td>
 
             <td valign="top" width="70%">
               <p><a href="http://arxiv.org/abs/2212.04488">
-                  <papertitle>Multi-Concept Customization of Text-to-Image Diffusion</papertitle>
+                  <papertitle>Exploring incompatible knowledge transfer in few-shot image generation</papertitle>
                 </a><br>
                 <i><span style="font-size: 10pt;">
-                    Nupur Kumari, <a href="https://zhangbingliang2019.github.io">Bingliang Zhang</a>, <a
-                      href="https://richzhang.github.io/">Richard Zhang</a>, <a
-                      href="https://research.adobe.com/person/eli-shechtman/">Eli Shechtman</a>, <a
-                      href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a></i><br>
+                    <b>Yunqing Zhao</b>, 
+                    <a href="https://duchao0726.github.io/">Chao Du</a>, 
+                    <a href="https://miladabd.github.io/">Milad Abdollahzadeh</a>, 
+                    <a href="https://p2333.github.io/">Tianyu Pang</a>, 
+                    <a href="https://linmin.me/">Min Lin</a>,
+                    <a href="https://yanshuicheng.info/">Shuicheng Yan</a>
+                    <a href="https://istd.sutd.edu.sg/people/faculty/ngai-man-man-cheung/">Ngai-Man Cheung<sup>&dagger;</sup></a>
+                </i><br>
 
-              <p>We propose Custom Diffusion, a method to fine-tune large-scale text-to-image diffusion models e.g. <a
-                  href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original">Stable Diffusion</a> given few
-                (~4-20) user-provided images of a new concept.
-                Our method is computationally efficient (~6 minutes on 2 A100 GPUs) and has low storage requirements for
-                each additional concept model (75MB) apart from the pretrained model.
+              <p>Through interpretable GAN dissection tools, we demonstrate that fine-tuning based methods cannot effectively remove knowledge that is incompatible
+                to the target domain after adaptation (e.g., trees /buildings on the sea) for few-shot image generation task.
+                We propose Remove In-Compatible Knowledge (RICK), an efficient and dynamic algorithm that estimates the filter importance and prune those are incompatible 
+                to the target domain.
                 <br>
 
               </p>
-              CVPR 2023.<br>
-              [<a href="http://arxiv.org/abs/2212.04488">Paper</a>]
-              [<a href="https://www.cs.cmu.edu/~custom-diffusion/">Webpage</a>]
-              [<a href="https://github.com/adobe-research/custom-diffusion">Code</a>]
+              <b>CVPR 2023, Vancouver, BC, Canada.</b><br>
+              [<a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhao_Exploring_Incompatible_Knowledge_Transfer_in_Few-Shot_Image_Generation_CVPR_2023_paper.pdf">Paper</a>]
+              [<a href="https://yunqing-me.github.io/RICK/">Webpage</a>]
+              [<a href="https://github.com/yunqing-me/RICK">Code</a>]
               </a> </p>
             </td>
           </tr>
 
-
           <tr>
             <td width="30%">
-              <img id="img-opt" src="img/concept_ablation.jpg" alt="project_img" width="160" style="border-style: none">
+              <img id="img-opt" src="img/fs-ban-method.png" alt="project_img" width="160" style="border-style: none">
             </td>
 
             <td valign="top" width="70%">
               <p><a href="https://arxiv.org/abs/2303.13516">
-                  <papertitle>Ablating Concepts in Text-to-Image Diffusion Models</papertitle>
+                  <papertitle>FS-BAN: Born-Again Networks for Domain Generalization Few-shot Classification</papertitle>
                 </a><br>
                 <i><span style="font-size: 10pt;">
-                    Nupur Kumari, <a href="https://zhangbingliang2019.github.io">Bingliang Zhang</a>, <a
-                      href="https://peterwang512.github.io">Sheng-Yu Wang</a>, <a
-                      href="https://research.adobe.com/person/eli-shechtman/">Eli Shechtman</a>, <a
-                      href="https://richzhang.github.io/">Richard Zhang</a>, <a
-                      href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a></i><br>
+                  <b>Yunqing Zhao</b>, 
+                  <a href="https://istd.sutd.edu.sg/people/faculty/ngai-man-man-cheung/">Ngai-Man Cheung<sup>&dagger;</sup></a>
+              </i><br>
 
-              <p>We propose a method to ablate (remove) copyrighted materials and memorized images from pretrained
-                text-to-image generative models. Our algorithm changes the target concept distribution to an anchor
-                concept, e.g., Van Gogh painting to paintings or Grumpy cat to Cat.
-                <br>
-
+              <p>We propose a method to improve the generalizability for cross-domain few-shot classification problem using born-again networks.
+                Our algorithm does not require additional parameters and training data and can be applied readily to many exisiting FSC models.
+                The key insight is to distill the dark knowledge from a teacher model with additional multi-task objectives designed specific for 
+                cross-domain few-shot learning.
+              <br>
               </p>
-              Arxiv 2023.<br>
-              [<a href="https://arxiv.org/abs/2303.13516">Paper</a>]
-              [<a href="https://www.cs.cmu.edu/~concept-ablation/">Webpage</a>]
-              [<a href="https://github.com/nupurkmr9/concept-ablation">Code</a>]
+              <b>IEEE Trans. on Image Processing (TIP) 2023</b><br>
+              [<a href="https://arxiv.org/abs/2208.10930">Paper</a>]
+              [<a href="https://yunqing-me.github.io/Born-Again-FS/">Webpage</a>]
+              [<a href="https://github.com/yunqing-me/Born-Again-FS">Code</a>]
               </a> </p>
             </td>
           </tr>
 
+          <tr>
+            <td width="30%">
+              <img id="img-opt" src="img/adam-compare.png" alt="project_img" width="160" style="border-style: none">
+            </td>
+
+            <td valign="top" width="70%">
+              <p><a href="https://arxiv.org/abs/2303.13516">
+                  <papertitle>Few-shot image generation via adaptation-aware kernel modulation</papertitle>
+                </a><br>
+                <i><span style="font-size: 10pt;">
+                  <b>Yunqing Zhao</b><sup>&#42;</sup>, 
+                  <a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran<sup>&#42;</sup></a>, 
+                  <a href="https://miladabd.github.io/">Milad Abdollahzadeh<sup>&#42;</sup></a>, 
+                  <a href="https://istd.sutd.edu.sg/people/faculty/ngai-man-man-cheung/">Ngai-Man Cheung<sup>&dagger;</sup></a>
+              </i><br>
+
+              <p>When fine-tuning a pretrained image generator on few-shot target samples, we show that state-of-the-art algorithms perform no-better
+                than a simple baseline method when the target samples are distant to the source domain. 
+                We propose AdAM, a parameter-efficient and target-aware method to select source knowledge important for few-shot adaptation.
+              <br>
+              </p>
+              <b>NeurIPS 2022, New Orleans, LA, USA.</b><br>
+              [<a href="https://arxiv.org/abs/2210.16559">Paper</a>]
+              [<a href="https://yunqing-me.github.io/AdAM/">Webpage</a>]
+              [<a href="https://github.com/yunqing-me/AdAM">Code</a>]
+              </a> </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td width="30%">
+              <img id="img-opt" src="img/a-closer-look-fsig.png" alt="project_img" width="160" style="border-style: none">
+            </td>
+
+            <td valign="top" width="70%">
+              <p><a href="https://arxiv.org/abs/2303.13516">
+                  <papertitle>A Closer Look at Few-shot Image Generation</papertitle>
+                </a><br>
+                <i><span style="font-size: 10pt;">
+                  <b>Yunqing Zhao</b>, 
+                  <a href="https://henghuiding.github.io/">Henghui Ding</a>, 
+                  <a href="https://huanghoujing.github.io/">Houjing Huang</a>, 
+                  <a href="https://istd.sutd.edu.sg/people/faculty/ngai-man-man-cheung/">Ngai-Man Cheung<sup>&dagger;</sup></a>
+              </i><br>
+
+              <p>We analyze the existing few-shot image generation algorithms in a unified testbed and find that
+                diversity degradation is the major issue during few-shot target adaptation. 
+                Our proposed mutual information based algorithm can alleviate this issue and achieve state-of-the-art performance
+                on few-shot image generation tasks.
+              <br>
+              </p>
+              <b>CVPR 2022, New Orleans, LA, USA.</b><br>
+              [<a href="https://arxiv.org/abs/2205.03805">Paper</a>]
+              [<a href="https://yunqing-me.github.io/A-Closer-Look-at-FSIG/">Webpage</a>]
+              [<a href="https://github.com/yunqing-me/A-Closer-Look-at-FSIG">Code</a>]
+              </a> </p>
+            </td>
+          </tr>
           <table width="100%" align="left" border="0" cellspacing="0" cellpadding="20">
             <p align="left">
               <font size="2">
+                <sup>&dagger;</sup> denotes corresponding author(s);<br>
                 <sup>&#42;</sup> denotes equal contribution
               </font>
           </table>
