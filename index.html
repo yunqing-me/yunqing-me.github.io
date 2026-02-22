@@ -118,9 +118,11 @@
           <tr>
             <br>
             <heading style="font-size:22px"> Things happened recently</heading> (occasionally updated)
-               <p style="font-size: 12.5px">- <b>[2025-08]:</b> My PhD thesis has been selected as the winner of <a href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/"> Outstanding Thesis Award</a>!</p>
-               <p style="font-size: 12.5px">- <b>[2025-07]:</b> Our work on MoE based Video LLMs is accepted by ICCV 2025!</p>
-               <p style="font-size: 12.5px">- <b>[2024-07]:</b> I received my PhD Degree from SUTD, and I joined TikTok / ByteDance Singapore as a research scientist.</p>
+               <p style="font-size: 12.5px"> <b>[2026-02]</b> Our work on Difficulty-aware tool-integrated reasoning MLLM, <a href="https://codedance-vl.github.io/"> CodeDance</a>, and <a href="https://arxiv.org/abs/2512.23568"> ThinkGen</a>, are accepted by CVPR 2026!</p>
+               <p style="font-size: 12.5px"> <b>[2026-01]</b> Our work on image2video generation models for normal estimation, <a href="https://arxiv.org/abs/2602.09929">RoSE</a>, has been accepted by ICLR 2026 as <b>oral presentation!</b></p>
+               <p style="font-size: 12.5px"> <b>[2025-08]</b> My PhD thesis has been selected as the winner of <a href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/"> Outstanding Thesis Award</a>!</p>
+               <p style="font-size: 12.5px"> <b>[2025-07]</b> Our work on MoE based Video LLMs, <a href="https://mwxely.github.io/projects/yang2025time/index"> TimeExpert</a>, is accepted by ICCV 2025!</p>
+               <p style="font-size: 12.5px"> <b>[2024-07]</b> I received my PhD Degree from SUTD, and I joined TikTok / ByteDance Singapore as a research scientist.</p>
             <br>
             <br>
           </tr>
@@ -136,7 +138,44 @@
 
           <tr>
             <td width="30%">
-              <img id="img-opt" src="img/TimeExpert_teaser.png" alt="project_img" width="160" height="100" style="border-style: none">
+              <img id="img-opt" src="img/codedance_pipe.jpeg" alt="project_img" width="200" height="220" style="border-style: none">
+            </td>
+
+            <td valign="top" width="70%">
+              <p ><papertitle><b style="color: #D10056;">CodeDance</b>: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning</papertitle><br>
+                <i><span style="font-size: 9pt;">
+                    Qi Song<sup>&#42;</sup>,
+                    Honglin Li<sup>&#42;</sup>,
+                    Yingchen Yu,
+                    Haoyi Zhou,
+                    Lin Yang,
+                    Qi She,
+                    Song Bai,
+                    Zilong Huang<sup>&dagger;</sup>,
+                    <b>Yunqing Zhao<sup>&dagger;</sup></b>,  
+                </i><br>
+                
+                <p>
+                  <b>Do we always need to integrate tools for visual reasoning?</b> <br>
+                  While tool-augmented multimodal models (e.g., o-series models and Gemini) have demonstrated strong performance gains, indiscriminate tool invocation often results in unnecessary computation, instability, and reasoning inefficiency.
+                  We introduce <b>CodeDance</b>, a scalable and dynamic tool-integrated MLLM that learns <i>when</i> and <i>how</i> to use tools, and critically, <b>when tool invocation is unnecessary</b>.
+                  Through a difficulty-aware reinforcement learning objective (RBAT), the model balances exploration and efficiency, addressing the long-standing overuse/underuse pathology in tool-augmented systems.
+                  Compared to prior tool-integrated approaches, <b>CodeDance</b> achieves strong improvements across counting, chart QA, and visual search/math benchmarks, while <b>reducing reasoning turns</b> and improving interaction efficiency.
+                </p>
+
+                <b>CVPR 2026, Denver, Colorado, United States.</b><br>
+                [<a href="https://arxiv.org/abs/2512.17312">Paper</a>]
+                [<a href="https://codedance-vl.github.io/">Webpage</a>]
+                [<a href="https://github.com/CodeDance-VL/CodeDance">Code</a>]
+                [<a href="https://huggingface.co/datasets/Peterwatwec/CodeDance-SFT">SFT Dataset</a>]
+                [<a href="https://huggingface.co/datasets/Peterwatwec/CodeDance-RL">RL Dataset</a>]
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td width="30%">
+              <img id="img-opt" src="img/TimeExpert_teaser.png" alt="project_img" width="260" height="130" style="border-style: none">
             </td>
 
             <td valign="top" width="70%">
@@ -156,10 +195,10 @@
                 </p>
 
                 <b>ICCV 2025, Honolulu, Hawaii, United States.</b><br>
-              [<a href="https://arxiv.org/abs/2508.01699">Paper</a>]
-              [<a href="https://mwxely.github.io/projects/yang2025time/index">Webpage</a>]
-              [<a href="https://mwxely.github.io/projects/yang2025time/index">Code</a>]
-              </a> </p>
+                [<a href="https://arxiv.org/abs/2508.01699">Paper</a>]
+                [<a href="https://mwxely.github.io/projects/yang2025time/index">Webpage</a>]
+                [<a href="https://mwxely.github.io/projects/yang2025time/index">Code</a>]
+              </p>
             </td>
           </tr>
 
@@ -171,8 +210,8 @@
             <td valign="top" width="70%">
               <p><papertitle>A Recipe for Watermarking (Multimodal) Diffusion Models</papertitle><br>
                 <i><span style="font-size: 9pt;">
-                    <b>Yunqing Zhao</sup></b>, 
-                    <a href="https://p2333.github.io/">Tianyu Pang</sup><sup>&dagger;</sup></a>, 
+                    <b>Yunqing Zhao</b>, 
+                    <a href="https://p2333.github.io/">Tianyu Pang<sup>&dagger;</sup></a>, 
                     <a href="https://duchao0726.github.io/">Chao Du<sup>&dagger;</sup></a>, 
                     <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, 
                     <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>&dagger;</sup></a>,
@@ -194,7 +233,7 @@
 
           <tr>
             <td width="30%">
-              <img id="img-opt" src="img/AttackVLM.jpeg" alt="project_img" width="160" height="100" style="border-style: none">
+              <img id="img-opt" src="img/AttackVLM.jpeg" alt="project_img" width="250" height="120" style="border-style: none">
             </td>
 
             <td valign="top" width="70%">
