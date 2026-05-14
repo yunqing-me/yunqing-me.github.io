@@ -219,12 +219,16 @@
     }
     .pub-row:first-child { border-top: 1px solid var(--rule); }
     .pub-img {
+      display: block;
       width: 152px;
+      max-width: 100%;
       height: 100px;
+      min-width: 0;
       object-fit: cover;
       border-radius: 10px;
       background: var(--chip);
     }
+    .pub-row > div { min-width: 0; }
     .venue-tag {
       display: inline-block;
       font-size: 11px;
@@ -433,7 +437,7 @@
     <p class="pub-note"><sup>†</sup> corresponding &nbsp;·&nbsp; <sup>*</sup> equal contribution &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en">Full list on Google Scholar</a></p>
 
     <div class="pub-row">
-      <img class="pub-img" src="img/codedance_pipe.jpeg" alt="CodeDance">
+      <img class="pub-img" width="152" height="100" src="img/codedance_pipe.jpeg" alt="CodeDance">
       <div>
         <div class="venue-tag">CVPR 2026</div>
         <div class="pub-title"><span class="hl">CodeDance</span>: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning</div>
@@ -450,7 +454,7 @@
     </div>
 
     <div class="pub-row">
-      <img class="pub-img" loading="lazy" src="img/TimeExpert_teaser.png" alt="TimeExpert">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/TimeExpert_teaser.png" alt="TimeExpert">
       <div>
         <div class="venue-tag">ICCV 2025</div>
         <div class="pub-title">TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding</div>
@@ -464,7 +468,7 @@
     </div>
 
     <div class="pub-row">
-      <img class="pub-img" loading="lazy" src="img/method-watermark.jpg" alt="WatermarkDM">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/method-watermark.jpg" alt="WatermarkDM">
       <div>
         <div class="venue-tag">arXiv 2023 · US Patent 2024</div>
         <div class="pub-title">A Recipe for Watermarking (Multimodal) Diffusion Models</div>
@@ -479,7 +483,7 @@
     </div>
 
     <div class="pub-row">
-      <img class="pub-img" loading="lazy" src="img/AttackVLM.jpeg" alt="AttackVLM">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/AttackVLM.jpeg" alt="AttackVLM">
       <div>
         <div class="venue-tag">NeurIPS 2023</div>
         <div class="pub-title">Evaluating Adversarial Robustness of Large Vision-Language Models</div>
@@ -494,7 +498,7 @@
     </div>
 
     <div class="pub-row">
-      <img class="pub-img" loading="lazy" src="img/incompatible-transfer.png" alt="RICK">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/incompatible-transfer.png" alt="RICK">
       <div>
         <div class="venue-tag">CVPR 2023</div>
         <div class="pub-title">Exploring Incompatible Knowledge Transfer in Few-Shot Image Generation</div>
@@ -509,7 +513,7 @@
     </div>
 
     <div class="pub-row">
-      <img class="pub-img" loading="lazy" src="img/fs-ban-method.png" alt="FS-BAN">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/fs-ban-method.png" alt="FS-BAN">
       <div>
         <div class="venue-tag">IEEE TIP 2023</div>
         <div class="pub-title">FS-BAN: Born-Again Networks for Domain Generalization Few-shot Classification</div>
@@ -524,7 +528,7 @@
     </div>
 
     <div class="pub-row">
-      <img class="pub-img" loading="lazy" src="img/adam-compare.png" alt="AdAM">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/adam-compare.png" alt="AdAM">
       <div>
         <div class="venue-tag">NeurIPS 2022</div>
         <div class="pub-title">Few-Shot Image Generation via Adaptation-Aware Kernel Modulation</div>
@@ -539,7 +543,7 @@
     </div>
 
     <div class="pub-row">
-      <img class="pub-img" loading="lazy" src="img/ls-kd-compatibility.png" alt="LS-KD">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/ls-kd-compatibility.png" alt="LS-KD">
       <div>
         <div class="venue-tag">ICML 2022</div>
         <div class="pub-title">Revisiting Label Smoothing &amp; Knowledge Distillation Compatibility: What was Missing?</div>
@@ -553,7 +557,7 @@
     </div>
 
     <div class="pub-row">
-      <img class="pub-img" loading="lazy" src="img/a-closer-look-fsig.png" alt="FSIG">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/a-closer-look-fsig.png" alt="FSIG">
       <div>
         <div class="venue-tag">CVPR 2022</div>
         <div class="pub-title">A Closer Look at Few-shot Image Generation</div>
