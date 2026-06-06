@@ -27,44 +27,15 @@
       background: #fff;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-      letter-spacing: -0.015em;
+      letter-spacing: -0.005em;
     }
 
     a { color: inherit; text-decoration: none; }
-
-    /* ── Nav ── */
-    nav {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      z-index: 99;
-      background: rgba(255,255,255,.8);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,.1);
+    a:focus-visible {
+      outline: 2px solid var(--black);
+      outline-offset: 3px;
+      border-radius: 4px;
     }
-    .nav-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-brand {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--black);
-      letter-spacing: -.2px;
-    }
-    .nav-links { display: flex; gap: 28px; }
-    .nav-links a {
-      font-size: 13px;
-      color: var(--soft);
-      transition: color .15s;
-    }
-    .nav-links a:hover { color: var(--black); }
 
     /* ── Page ── */
     .wrap {
@@ -92,7 +63,7 @@
     }
     .hero-bio {
       font-size: 17px;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--mid);
       line-height: 1.65;
       margin-bottom: 28px;
@@ -127,7 +98,6 @@
     .sec {
       padding-top: 72px;
       margin-bottom: 32px;
-      scroll-margin-top: 48px;
     }
     .sec h2 {
       font-size: 32px;
@@ -137,25 +107,6 @@
     }
 
     /* ── News ── */
-    .news-scroll-wrap {
-      position: relative;
-    }
-    .news-scroll-wrap::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 48px;
-      background: linear-gradient(to bottom, transparent, #fff);
-      pointer-events: none;
-    }
-    .news-scroll {
-      max-height: 280px;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .news-scroll::-webkit-scrollbar { display: none; }
-    .news-scroll-inner { padding-bottom: 52px; }
     .news-row {
       display: grid;
       grid-template-columns: 80px 1fr;
@@ -199,12 +150,12 @@
     /* ── Papers ── */
     .pub-note {
       font-size: 13px;
-      color: var(--faint);
+      color: var(--soft);
       margin-bottom: 32px;
       margin-top: -12px;
     }
     .pub-note a {
-      color: var(--faint);
+      color: var(--soft);
       border-bottom: 1px solid var(--rule);
     }
     .pub-note a:hover { color: var(--mid); border-color: var(--mid); }
@@ -231,7 +182,7 @@
     .pub-row > div { min-width: 0; }
     .venue-tag {
       display: inline-block;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 600;
       letter-spacing: .4px;
       text-transform: uppercase;
@@ -248,23 +199,24 @@
     }
     .pub-title .hl { color: #c2185b; }
     .pub-authors {
-      font-size: 12.5px;
-      color: var(--faint);
+      font-size: 13px;
+      color: var(--soft);
       line-height: 1.5;
       margin-bottom: 12px;
     }
-    .pub-authors b { color: var(--soft); font-weight: 500; }
-    .pub-authors a { color: var(--faint); transition: color .15s; }
-    .pub-authors a:hover { color: var(--mid); }
+    .pub-authors b { color: var(--black); font-weight: 600; }
+    .pub-authors a { color: var(--soft); transition: color .15s; }
+    .pub-authors a:hover { color: var(--black); }
     .pub-desc {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--soft);
       line-height: 1.65;
+      max-width: 640px;
       margin-bottom: 12px;
     }
     .links { display: flex; flex-wrap: wrap; gap: 6px; }
     .links a {
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 500;
       padding: 4px 13px;
       background: var(--chip);
@@ -275,24 +227,6 @@
     .links a:hover { background: #e8e8ed; }
 
     /* ── Experience timeline ── */
-    .exp-scroll-wrap {
-      position: relative;
-    }
-    .exp-scroll-wrap::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 48px;
-      background: linear-gradient(to bottom, transparent, #fff);
-      pointer-events: none;
-    }
-    .exp-scroll {
-      max-height: 320px;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .exp-scroll::-webkit-scrollbar { display: none; }
     .timeline {
       position: relative;
       padding-left: 28px;
@@ -310,7 +244,7 @@
       position: relative;
       padding: 0 0 32px;
     }
-    .tl-item:last-child { padding-bottom: 52px; }
+    .tl-item:last-child { padding-bottom: 4px; }
     .tl-item::before {
       content: '';
       position: absolute;
@@ -329,7 +263,7 @@
     }
     .exp-org  { font-size: 15px; font-weight: 700; letter-spacing: -.15px; color: var(--black); }
     .exp-meta { font-size: 13px; color: var(--soft); margin-top: 3px; margin-bottom: 5px; }
-    .exp-detail { font-size: 13.5px; color: var(--faint); line-height: 1.6; }
+    .exp-detail { font-size: 13.5px; color: var(--soft); line-height: 1.6; }
     .exp-detail a { color: var(--soft); border-bottom: 1px solid transparent; transition: border-color .15s; }
     .exp-detail a:hover { border-color: var(--soft); }
 
@@ -362,25 +296,16 @@
       h1 { font-size: 40px; letter-spacing: -2px; }
       .pub-row { grid-template-columns: 1fr; }
       .pub-img { width: 100%; height: 160px; }
-      .nav-links { display: none; }
       .news-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 
 <body>
-
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-brand">~/</span>
-      <div class="nav-links">
-        <a href="#news">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#service">Service</a>
-      </div>
-    </div>
-  </nav>
 
   <div class="wrap">
 
@@ -389,7 +314,7 @@
       <div>
         <h1>Yunqing Zhao</h1>
         <p class="hero-bio">
-          Research Scientist at <b>TikTok / ByteDance</b>, Singapore, working on multimodal AI, with a focus on scalable post-training for vision-language models.
+          I was a Research Scientist at <b>TikTok / ByteDance</b>, Singapore. I work on multimodal AI, with a focus on scalable post-training for vision-language models.
           <br><br>
           PhD (Outstanding Thesis Award) from <a href="https://sutd.edu.sg/">SUTD</a>, 2024. Previously at <a href="https://sail.sea.com/research">Sea AI Lab</a>, <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/">Microsoft Research Asia</a>, and <a href="https://www.bytedance.com/en/">ByteDance AI Lab</a>.
         </p>
@@ -408,6 +333,10 @@
     <div class="news-scroll-wrap">
       <div class="news-scroll">
         <div class="news-scroll-inner">
+          <div class="news-row">
+            <div class="news-date">2026-04</div>
+            <div class="news-body"><a href="https://ieeexplore.ieee.org/abstract/document/11479916">Text4Seg++</a> accepted at <b>IEEE TPAMI</b>.</div>
+          </div>
           <div class="news-row">
             <div class="news-date">2026-02</div>
             <div class="news-body"><a href="https://codedance-vl.github.io/">CodeDance</a> and <a href="https://arxiv.org/abs/2512.23568">ThinkGen</a> accepted at <b>CVPR 2026</b>.</div>
@@ -433,7 +362,7 @@
     </div>
 
     <!-- Publications -->
-    <div id="publications" class="sec"><h2>Publications</h2></div>
+    <div id="publications" class="sec"><h2>Selected Publications</h2></div>
     <p class="pub-note"><sup>†</sup> corresponding &nbsp;·&nbsp; <sup>*</sup> equal contribution &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en">Full list on Google Scholar</a></p>
 
     <div class="pub-row">
@@ -449,6 +378,20 @@
           <a href="https://github.com/CodeDance-VL/CodeDance">Code</a>
           <a href="https://huggingface.co/datasets/Peterwatwec/CodeDance-SFT">SFT Data</a>
           <a href="https://huggingface.co/datasets/Peterwatwec/CodeDance-RL">RL Data</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/text4seg.jpg" alt="Text4Seg++">
+      <div>
+        <div class="venue-tag">IEEE TPAMI 2026</div>
+        <div class="pub-title"><span class="hl">Text4Seg++</span>: Advancing Image Segmentation via Generative Language Modeling</div>
+        <div class="pub-authors"><a href="https://mc-lan.github.io/">Mengcheng Lan</a>, Chaofeng Chen, J. Xu, Zongrui Li, Yiping Ke, Xudong Jiang, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao<sup>†</sup></b>, <a href="https://songbai.site/">Song Bai</a></div>
+        <div class="pub-desc">Can a multimodal LLM segment at the pixel level without bolting on a separate mask decoder? Text4Seg++ recasts segmentation as pure text generation via <em>semantic descriptors</em> that map each image patch to a text label, with a Row-wise Run-Length Encoding (R-RLE) that trims sequence length by 74% and speeds inference 3x. Reframing the task as <em>next-brick prediction</em>, it outperforms state-of-the-art models across natural and remote-sensing benchmarks with no task-specific fine-tuning, while staying compatible with existing MLLM backbones.</div>
+        <div class="links">
+          <a href="https://ieeexplore.ieee.org/abstract/document/11479916">Paper</a>
+          <a href="https://arxiv.org/abs/2509.06321">arXiv</a>
         </div>
       </div>
     </div>
@@ -579,30 +522,30 @@
         <div class="timeline">
           <div class="tl-item active">
             <div class="exp-org">TikTok / ByteDance, Singapore</div>
-            <div class="exp-meta">Research Scientist &nbsp;·&nbsp; Jul 2024 – Present</div>
+            <div class="exp-meta">Research Scientist &nbsp;·&nbsp; 2024 - 2026</div>
           </div>
           <div class="tl-item">
             <div class="exp-org">Microsoft Research Asia</div>
-            <div class="exp-meta">Research Intern &nbsp;·&nbsp; Nov 2023 – Feb 2024</div>
+            <div class="exp-meta">Research Intern &nbsp;·&nbsp; 2023 - 2024</div>
           </div>
           <div class="tl-item">
             <div class="exp-org">Sea AI Lab (SAIL), Singapore</div>
-            <div class="exp-meta">Research Intern &nbsp;·&nbsp; Sep 2022 – Nov 2023</div>
+            <div class="exp-meta">Research Intern &nbsp;·&nbsp; 2022 - 2023</div>
             <div class="exp-detail">With <a href="https://duchao0726.github.io/">Chao Du</a> and <a href="https://p2333.github.io/">Tianyu Pang</a>, advised by <a href="https://yanshuicheng.info/">Prof. Shuicheng Yan</a> and <a href="https://linmin.me/">Min Lin</a>.</div>
           </div>
           <div class="tl-item">
             <div class="exp-org">TikTok / ByteDance AI Lab, Singapore</div>
-            <div class="exp-meta">Research Intern &nbsp;·&nbsp; Aug 2021 – Aug 2022</div>
+            <div class="exp-meta">Research Intern &nbsp;·&nbsp; 2021 - 2022</div>
             <div class="exp-detail">With <a href="https://henghuiding.github.io/">Henghui Ding</a> and <a href="https://huanghoujing.github.io/">Houjing Huang</a>.</div>
           </div>
           <div class="tl-item">
-            <div class="exp-org">ST Engineering – SUTD Cyber Security Lab</div>
-            <div class="exp-meta">Student Researcher &nbsp;·&nbsp; Aug 2020 – Jul 2021</div>
+            <div class="exp-org">ST Engineering - SUTD Cyber Security Lab</div>
+            <div class="exp-meta">Student Researcher &nbsp;·&nbsp; 2020 - 2021</div>
             <div class="exp-detail">Advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Prof. Ngai-Man Cheung</a>.</div>
           </div>
           <div class="tl-item">
             <div class="exp-org">University of Hong Kong</div>
-            <div class="exp-meta">Research Assistant &nbsp;·&nbsp; Nov 2018 – Apr 2019</div>
+            <div class="exp-meta">Research Assistant &nbsp;·&nbsp; 2018 - 2019</div>
             <div class="exp-detail">Advised by <a href="https://www.eee.hku.hk/~vtam/">Dr. Vincent Tam</a>.</div>
           </div>
         </div>
