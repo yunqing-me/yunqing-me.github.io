@@ -82,17 +82,18 @@
       border-radius: 50%;
       object-fit: cover;
     }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 22px; }
     .chips a {
-      padding: 7px 16px;
-      background: var(--chip);
-      border-radius: 980px;
-      font-size: 13.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
       font-weight: 500;
-      color: var(--black);
-      transition: background .15s;
+      color: var(--mid);
+      transition: color .15s;
     }
-    .chips a:hover { background: #e8e8ed; }
+    .chips a:hover { color: var(--black); }
+    .chips svg { width: 15px; height: 15px; flex-shrink: 0; }
 
     /* ── Section header ── */
     .sec {
@@ -104,47 +105,6 @@
       font-weight: 700;
       letter-spacing: -1px;
       color: var(--black);
-    }
-
-    /* ── News ── */
-    .news-row {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 20px;
-      padding: 14px 0;
-      align-items: baseline;
-    }
-    .news-date {
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--faint);
-      letter-spacing: .2px;
-    }
-    .news-body {
-      font-size: 15px;
-      color: var(--mid);
-      line-height: 1.55;
-    }
-    .news-body b { font-weight: 600; color: var(--black); }
-    .news-body a {
-      color: var(--black);
-      font-weight: 500;
-      border-bottom: 1px solid var(--rule);
-      transition: border-color .15s;
-    }
-    .news-body a:hover { border-color: var(--black); }
-    .oral {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      background: #fef9c3;
-      color: #854d0e;
-      padding: 1.5px 7px;
-      border-radius: 5px;
-      margin-left: 5px;
-      vertical-align: middle;
     }
 
     /* ── Papers ── */
@@ -165,10 +125,8 @@
       grid-template-columns: 152px 1fr;
       gap: 28px;
       padding: 28px 0;
-      border-bottom: 1px solid var(--rule);
       align-items: start;
     }
-    .pub-row:first-child { border-top: 1px solid var(--rule); }
     .pub-img {
       display: block;
       width: 152px;
@@ -184,8 +142,7 @@
       display: inline-block;
       font-size: 11.5px;
       font-weight: 600;
-      letter-spacing: .4px;
-      text-transform: uppercase;
+      letter-spacing: .2px;
       color: var(--faint);
       margin-bottom: 7px;
     }
@@ -204,7 +161,7 @@
       line-height: 1.5;
       margin-bottom: 12px;
     }
-    .pub-authors b { color: var(--black); font-weight: 600; }
+    .pub-authors b { color: var(--black); font-weight: 500; }
     .pub-authors a { color: var(--soft); transition: color .15s; }
     .pub-authors a:hover { color: var(--black); }
     .pub-desc {
@@ -296,7 +253,6 @@
       h1 { font-size: 40px; letter-spacing: -2px; }
       .pub-row { grid-template-columns: 1fr; }
       .pub-img { width: 100%; height: 160px; }
-      .news-row { grid-template-columns: 1fr; gap: 4px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -316,49 +272,20 @@
         <p class="hero-bio">
           I was a Research Scientist at <b>TikTok / ByteDance</b>, Singapore. I work on multimodal AI, with a focus on scalable post-training for vision-language models.
           <br><br>
-          PhD (Outstanding Thesis Award) from <a href="https://sutd.edu.sg/">SUTD</a>, 2024. Previously at <a href="https://sail.sea.com/research">Sea AI Lab</a>, <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/">Microsoft Research Asia</a>, and <a href="https://www.bytedance.com/en/">ByteDance AI Lab</a>.
+          PhD (<a href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/">Outstanding Thesis Award</a>) from <a href="https://sutd.edu.sg/">SUTD</a>, 2024. Previously at <a href="https://sail.sea.com/research">Sea AI Lab</a>, <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/">Microsoft Research Asia</a>, and <a href="https://www.bytedance.com/en/">ByteDance AI Lab</a>.
         </p>
         <div class="chips">
-          <a href="mailto:yunqing.z.0817@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/yunqing-zhao/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/yunqing-me" target="_blank">GitHub</a>
-          <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a href="mailto:yunqing.z.0817@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a>
+          <a href="https://www.linkedin.com/in/yunqing-zhao/" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>LinkedIn</a>
+          <a href="https://github.com/yunqing-me" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"></path></svg>GitHub</a>
+          <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"></path></svg>Google Scholar</a>
         </div>
       </div>
       <img class="hero-photo" src="img/avatar.jpeg" alt="Yunqing Zhao">
-    </div>
-
-    <!-- News -->
-    <div id="news" class="sec"><h2>News</h2></div>
-    <div class="news-scroll-wrap">
-      <div class="news-scroll">
-        <div class="news-scroll-inner">
-          <div class="news-row">
-            <div class="news-date">2026-04</div>
-            <div class="news-body"><a href="https://ieeexplore.ieee.org/abstract/document/11479916">Text4Seg++</a> accepted at <b>IEEE TPAMI</b>.</div>
-          </div>
-          <div class="news-row">
-            <div class="news-date">2026-02</div>
-            <div class="news-body"><a href="https://codedance-vl.github.io/">CodeDance</a> and <a href="https://arxiv.org/abs/2512.23568">ThinkGen</a> accepted at <b>CVPR 2026</b>.</div>
-          </div>
-          <div class="news-row">
-            <div class="news-date">2026-01</div>
-            <div class="news-body"><a href="https://arxiv.org/abs/2602.09929">RoSE</a> accepted at <b>ICLR 2026</b> <span class="oral">Oral</span></div>
-          </div>
-          <div class="news-row">
-            <div class="news-date">2025-08</div>
-            <div class="news-body">PhD thesis selected as <a href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/">Outstanding Thesis Award</a> winner.</div>
-          </div>
-          <div class="news-row">
-            <div class="news-date">2025-07</div>
-            <div class="news-body"><a href="https://mwxely.github.io/projects/yang2025time/index">TimeExpert</a> accepted at <b>ICCV 2025</b>.</div>
-          </div>
-          <div class="news-row">
-            <div class="news-date">2024-07</div>
-            <div class="news-body">Joined <b>TikTok / ByteDance Singapore</b> as research scientist after receiving PhD from SUTD.</div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Publications -->
@@ -392,6 +319,22 @@
         <div class="links">
           <a href="https://ieeexplore.ieee.org/abstract/document/11479916">Paper</a>
           <a href="https://arxiv.org/abs/2509.06321">arXiv</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/genlip.jpg" alt="GenLIP">
+      <div>
+        <div class="venue-tag">ECCV 2026</div>
+        <div class="pub-title"><span class="hl">Let ViT Speak</span>: Generative Language-Image Pre-training</div>
+        <div class="pub-authors"><a href="https://yanfangcs.github.io/">Yan Fang<sup>*</sup></a>, <a href="https://mc-lan.github.io/">Mengcheng Lan<sup>*</sup></a>, <a href="https://speedinghzl.github.io/">Zilong Huang<sup>†</sup></a>, Weixian Lei, <b>Yunqing Zhao</b>, Yujie Zhong, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, Qi She, Yao Zhao, Yunchao Wei<sup>†</sup></div>
+        <div class="pub-desc">What if a vision encoder were pretrained the way LLMs are — by simply predicting the next token? GenLIP makes the ViT itself generative: it reads image patches and emits language tokens directly under a plain language-modeling objective, dropping the contrastive two-tower setup and any separate text decoder. The result is a strikingly simple recipe that aligns visual features with the autoregressive nature of LLMs and transfers cleanly into multimodal models.</div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2605.00809">Paper</a>
+          <a href="https://yanfangcs.github.io/vitspeak/">Webpage</a>
+          <a href="https://github.com/YanFangCS/GenLIP">Code</a>
+          <a href="https://huggingface.co/collections/YanFang/genlip">Models</a>
         </div>
       </div>
     </div>
@@ -523,6 +466,7 @@
           <div class="tl-item active">
             <div class="exp-org">TikTok / ByteDance, Singapore</div>
             <div class="exp-meta">Research Scientist &nbsp;·&nbsp; 2024 - 2026</div>
+            <div class="exp-detail">With <a href="https://songbai.site/">Song Bai</a> and <a href="https://speedinghzl.github.io/">Zilong Huang</a>.</div>
           </div>
           <div class="tl-item">
             <div class="exp-org">Microsoft Research Asia</div>
