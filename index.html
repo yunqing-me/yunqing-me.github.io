@@ -139,14 +139,6 @@
       background: var(--chip);
     }
     .pub-row > div { min-width: 0; }
-    .venue-tag {
-      display: inline-block;
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: .2px;
-      color: var(--faint);
-      margin-bottom: 7px;
-    }
     .pub-title {
       font-size: 15.5px;
       font-weight: 700;
@@ -158,13 +150,20 @@
     .pub-title .hl { color: #c2185b; }
     .pub-authors {
       font-size: 13px;
-      color: var(--soft);
+      color: var(--black);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .pub-authors b { color: var(--black); font-weight: 700; }
+    .pub-authors a { color: var(--black); transition: color .15s; }
+    .pub-authors a:hover { color: var(--soft); }
+    .pub-venue {
+      font-size: 13px;
+      color: var(--black);
       line-height: 1.5;
       margin-bottom: 12px;
     }
-    .pub-authors b { color: var(--black); font-weight: 500; }
-    .pub-authors a { color: var(--soft); transition: color .15s; }
-    .pub-authors a:hover { color: var(--black); }
+    .pub-venue b { color: var(--black); font-weight: 600; }
     .pub-desc {
       font-size: 14px;
       color: var(--soft);
@@ -296,9 +295,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" src="img/codedance_pipe.jpeg" alt="CodeDance">
       <div>
-        <div class="venue-tag">CVPR 2026</div>
         <div class="pub-title"><span class="hl">CodeDance</span>: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning</div>
         <div class="pub-authors">Qi Song<sup>*</sup>, Honglin Li<sup>*</sup>, Yingchen Yu, Haoyi Zhou, Lin Yang, Qi She, Song Bai, Zilong Huang<sup>†</sup>, <b>Yunqing Zhao<sup>†</sup></b></div>
+        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026</div>
         <div class="pub-desc">Do we always need to integrate tools for visual reasoning? While tool-augmented MLLMs have shown strong gains, indiscriminate tool invocation results in unnecessary computation and reasoning inefficiency. CodeDance learns <em>when</em> and <em>how</em> to use tools — and critically, when tool invocation is unnecessary. Through a difficulty-aware RL objective (RBAT), it achieves strong improvements across counting, chart QA, and visual search/math benchmarks while reducing reasoning turns.</div>
         <div class="links">
           <a href="https://arxiv.org/abs/2512.17312">Paper</a>
@@ -313,9 +312,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/text4seg.jpg" alt="Text4Seg++">
       <div>
-        <div class="venue-tag">IEEE TPAMI 2026</div>
         <div class="pub-title"><span class="hl">Text4Seg++</span>: Advancing Image Segmentation via Generative Language Modeling</div>
         <div class="pub-authors"><a href="https://mc-lan.github.io/">Mengcheng Lan</a>, Chaofeng Chen, J. Xu, Zongrui Li, Yiping Ke, Xudong Jiang, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao<sup>†</sup></b>, <a href="https://songbai.site/">Song Bai</a></div>
+        <div class="pub-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>), 2026</div>
         <div class="pub-desc">Can a multimodal LLM segment at the pixel level without bolting on a separate mask decoder? Text4Seg++ recasts segmentation as pure text generation via <em>semantic descriptors</em> that map each image patch to a text label, with a Row-wise Run-Length Encoding (R-RLE) that trims sequence length by 74% and speeds inference 3x. Reframing the task as <em>next-brick prediction</em>, it outperforms state-of-the-art models across natural and remote-sensing benchmarks with no task-specific fine-tuning, while staying compatible with existing MLLM backbones.</div>
         <div class="links">
           <a href="https://ieeexplore.ieee.org/abstract/document/11479916">Paper</a>
@@ -327,9 +326,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/genlip.jpg" alt="GenLIP">
       <div>
-        <div class="venue-tag">ECCV 2026</div>
         <div class="pub-title"><span class="hl">Let ViT Speak</span>: Generative Language-Image Pre-training</div>
         <div class="pub-authors"><a href="https://yanfangcs.github.io/">Yan Fang<sup>*</sup></a>, <a href="https://mc-lan.github.io/">Mengcheng Lan<sup>*</sup></a>, <a href="https://speedinghzl.github.io/">Zilong Huang<sup>†</sup></a>, Weixian Lei, <b>Yunqing Zhao</b>, Yujie Zhong, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, Qi She, Yao Zhao, Yunchao Wei<sup>†</sup></div>
+        <div class="pub-venue">European Conference on Computer Vision (<b>ECCV</b>), 2026</div>
         <div class="pub-desc">What if a vision encoder were pretrained the way LLMs are — by simply predicting the next token? GenLIP makes the ViT itself generative: it reads image patches and emits language tokens directly under a plain language-modeling objective, dropping the contrastive two-tower setup and any separate text decoder. The result is a strikingly simple recipe that aligns visual features with the autoregressive nature of LLMs and transfers cleanly into multimodal models.</div>
         <div class="links">
           <a href="https://arxiv.org/abs/2605.00809">Paper</a>
@@ -343,9 +342,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/TimeExpert_teaser.png" alt="TimeExpert">
       <div>
-        <div class="venue-tag">ICCV 2025</div>
         <div class="pub-title">TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding</div>
         <div class="pub-authors"><a href="https://mwxely.github.io/">Zuhao Yang</a>, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao</b>, <a href="https://personal.ntu.edu.sg/shijian.lu/">Shijian Lu<sup>†</sup></a>, <a href="https://songbai.site/">Song Bai</a></div>
+        <div class="pub-venue">IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
         <div class="pub-desc">Video temporal grounding bundles three distinct subtasks — localizing timestamps, scoring saliency, and generating text — yet most Video-LLMs push them all through identical pathways. TimeExpert is a Mixture-of-Experts Video-LLM that routes each task-specific token to a specialized expert, sharpening event modeling and efficiency to reach state-of-the-art on dense video captioning, moment retrieval, and highlight detection.</div>
         <div class="links">
           <a href="https://arxiv.org/abs/2508.01699">Paper</a>
@@ -358,9 +357,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/method-watermark.jpg" alt="WatermarkDM">
       <div>
-        <div class="venue-tag">arXiv 2023 · US Patent 2024</div>
         <div class="pub-title">A Recipe for Watermarking (Multimodal) Diffusion Models</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
+        <div class="pub-venue"><b>arXiv</b> Preprint, 2023 &nbsp;·&nbsp; <b>US Patent</b>, 2024</div>
         <div class="pub-desc">We derive a recipe for efficiently watermarking state-of-the-art diffusion models (e.g., Stable Diffusion), via training from scratch or fine-tuning. Our recipe is straightforward but involves empirically ablated implementation details, providing a solid foundation for future research on watermarking DMs.</div>
         <div class="links">
           <a href="https://arxiv.org/abs/2303.10137">Paper</a>
@@ -373,9 +372,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/AttackVLM.jpeg" alt="AttackVLM">
       <div>
-        <div class="venue-tag">NeurIPS 2023</div>
         <div class="pub-title">Evaluating Adversarial Robustness of Large Vision-Language Models</div>
         <div class="pub-authors"><b>Yunqing Zhao<sup>*</sup></b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>*†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://zhenxuan00.github.io/">Chongxuan Li</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
+        <div class="pub-venue">Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2023</div>
         <div class="pub-desc">Large VLMs achieve unprecedented performance with visual inputs, but multimodal generation exacerbates safety concerns. We evaluate the adversarial robustness of open-source VLMs (e.g., MiniGPT-4, LLaVA, BLIP, UniDiffuser) in the most realistic high-risk setting, where adversaries have only black-box access and seek to elicit targeted responses.</div>
         <div class="links">
           <a href="https://arxiv.org/pdf/2305.16934.pdf">Paper</a>
@@ -388,9 +387,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/incompatible-transfer.png" alt="RICK">
       <div>
-        <div class="venue-tag">CVPR 2023</div>
         <div class="pub-title">Exploring Incompatible Knowledge Transfer in Few-Shot Image Generation</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://duchao0726.github.io/">Chao Du</a>, <a href="https://miladabd.github.io/">Milad Abdollahzadeh</a>, <a href="https://p2333.github.io/">Tianyu Pang</a>, <a href="https://linmin.me/">Min Lin</a>, <a href="https://yanshuicheng.info/">Shuicheng Yan</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
+        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2023</div>
         <div class="pub-desc">Through interpretable GAN dissection, we show that fine-tuning-based methods cannot effectively remove knowledge incompatible with the target domain after adaptation. We propose RICK, an efficient algorithm that estimates filter importance and prunes those incompatible with the target domain for few-shot image generation.</div>
         <div class="links">
           <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhao_Exploring_Incompatible_Knowledge_Transfer_in_Few-Shot_Image_Generation_CVPR_2023_paper.pdf">Paper</a>
@@ -403,9 +402,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/fs-ban-method.png" alt="FS-BAN">
       <div>
-        <div class="venue-tag">IEEE TIP 2023</div>
         <div class="pub-title">FS-BAN: Born-Again Networks for Domain Generalization Few-shot Classification</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
+        <div class="pub-venue">IEEE Transactions on Image Processing (<b>TIP</b>), 2023</div>
         <div class="pub-desc">We propose a method to improve generalizability for cross-domain few-shot classification using born-again networks. Our algorithm requires no additional parameters or training data and can be readily applied to existing FSC models, distilling dark knowledge from a teacher via multi-task objectives designed for cross-domain few-shot learning.</div>
         <div class="links">
           <a href="https://arxiv.org/abs/2208.10930">Paper</a>
@@ -418,9 +417,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/adam-compare.png" alt="AdAM">
       <div>
-        <div class="venue-tag">NeurIPS 2022</div>
         <div class="pub-title">Few-Shot Image Generation via Adaptation-Aware Kernel Modulation</div>
         <div class="pub-authors"><b>Yunqing Zhao<sup>*</sup></b>, <a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran<sup>*</sup></a>, <a href="https://miladabd.github.io/">Milad Abdollahzadeh<sup>*</sup></a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
+        <div class="pub-venue">Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2022</div>
         <div class="pub-desc">When fine-tuning a pretrained generator on few-shot target samples, we show that state-of-the-art algorithms perform no better than a simple baseline when the target is distant from the source domain. We propose AdAM, a parameter-efficient and target-aware method to select source knowledge important for few-shot adaptation.</div>
         <div class="links">
           <a href="https://arxiv.org/abs/2210.16559">Paper</a>
@@ -433,9 +432,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/ls-kd-compatibility.png" alt="LS-KD">
       <div>
-        <div class="venue-tag">ICML 2022</div>
         <div class="pub-title">Revisiting Label Smoothing &amp; Knowledge Distillation Compatibility: What was Missing?</div>
         <div class="pub-authors"><a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran</a>, <a href="https://scholar.google.com.sg/citations?user=9SE3GYMAAAAJ&hl=en">Ngoc-Trung Tran<sup>*</sup></a>, <b>Yunqing Zhao<sup>*</sup></b>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
+        <div class="pub-venue">International Conference on Machine Learning (<b>ICML</b>), 2022</div>
         <div class="pub-desc">Prior work disagreed on whether a label-smoothed teacher helps or hurts knowledge distillation. We pinpoint <em>systematic diffusion</em> as the missing piece — it erodes the benefits of distilling from an LS-trained teacher at high temperatures — and show that pairing an LS-trained teacher with low-temperature transfer reliably produces strong students.</div>
         <div class="links">
           <a href="https://proceedings.mlr.press/v162/chandrasegaran22a/chandrasegaran22a.pdf">Paper</a>
@@ -448,9 +447,9 @@
     <div class="pub-row">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/a-closer-look-fsig.png" alt="FSIG">
       <div>
-        <div class="venue-tag">CVPR 2022</div>
         <div class="pub-title">A Closer Look at Few-shot Image Generation</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://henghuiding.github.io/">Henghui Ding</a>, <a href="https://huanghoujing.github.io/">Houjing Huang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
+        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2022</div>
         <div class="pub-desc">We analyze existing few-shot image generation algorithms in a unified testbed and find that diversity degradation is the major issue during few-shot target adaptation. Our mutual information based algorithm alleviates this issue and achieves state-of-the-art performance on few-shot image generation tasks.</div>
         <div class="links">
           <a href="https://arxiv.org/abs/2205.03805">Paper</a>
