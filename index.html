@@ -6,8 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#ffffff">
   <title>Yunqing Zhao</title>
-  <link rel="icon" type="image/png" href="img/codie_icon.png">
-  <link rel="apple-touch-icon" href="img/codie_icon.png">
+  <meta name="description" content="Yunqing Zhao, Senior AI Researcher at Tencent Hy: Multimodal LLMs, agents. Weights hold what a model knows; context decides what it does.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yunqing Zhao">
+  <meta property="og:description" content="Yunqing Zhao, Senior AI Researcher at Tencent Hy: Multimodal LLMs, agents. Weights hold what a model knows; context decides what it does.">
+  <meta property="og:url" content="https://yunqing-me.github.io/">
+  <meta property="og:image" content="https://yunqing-me.github.io/img/avatar-2026-square.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -38,21 +46,23 @@
       border-radius: 4px;
     }
 
-    /* ── Page ── */
-    .wrap {
+    /* ── Page: full-bleed bands around one centered column ── */
+    .band { padding: 104px 0; }
+    .band.grey { background: var(--band); }
+    .band-hero { padding: 0; }
+    .inner {
       max-width: 900px;
       margin: 0 auto;
-      padding: 0 24px 120px;
+      padding: 0 24px;
     }
 
     /* ── Hero ── */
     .hero {
       display: grid;
-      grid-template-columns: 1fr 200px;
+      grid-template-columns: 1fr 250px;
       gap: 60px;
-      align-items: center;
-      padding: 72px 0 88px;
-      border-bottom: 1px solid var(--rule);
+      align-items: start;
+      padding: 80px 0 96px;
     }
     h1 {
       font-size: 56px;
@@ -78,9 +88,10 @@
     }
     .hero-bio a:hover { border-color: var(--mid); }
     .hero-photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+      width: 250px;
+      height: 312px;
+      margin-top: 34px;
+      border-radius: 24px;
       object-fit: cover;
     }
     .chips { display: flex; flex-wrap: wrap; gap: 22px; }
@@ -95,33 +106,23 @@
     }
     .chips a:hover { color: var(--black); }
     .chips svg { width: 15px; height: 15px; flex-shrink: 0; }
-    .hero-slogan {
-      margin-top: 24px;
-      font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
-      font-size: 13px;
-      letter-spacing: -0.01em;
-      color: var(--soft);
-    }
-    .hero-slogan .prompt { color: var(--faint); margin-right: 2px; }
 
     /* ── Section header ── */
-    .sec {
-      padding-top: 72px;
-      margin-bottom: 32px;
-    }
+    .sec { margin-bottom: 40px; }
     .sec h2 {
-      font-size: 32px;
+      font-size: 44px;
       font-weight: 700;
-      letter-spacing: -1px;
+      letter-spacing: -1.6px;
+      line-height: 1.08;
       color: var(--black);
     }
 
     /* ── Papers ── */
     .pub-note {
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--soft);
       margin-bottom: 32px;
-      margin-top: -12px;
+      margin-top: -16px;
     }
     .pub-note a {
       color: var(--soft);
@@ -133,7 +134,8 @@
       display: grid;
       grid-template-columns: 152px 1fr;
       gap: 28px;
-      padding: 28px 0;
+      padding: 36px 0;
+      border-top: 1px solid var(--hair);
       align-items: start;
     }
     .pub-img {
@@ -143,8 +145,9 @@
       height: 100px;
       min-width: 0;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
       background: var(--chip);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .06);
     }
     .pub-row > div { min-width: 0; }
     .pub-title {
@@ -157,7 +160,7 @@
     }
     .pub-title .hl { color: #c2185b; }
     .pub-authors {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--black);
       line-height: 1.5;
       margin-bottom: 6px;
@@ -166,14 +169,14 @@
     .pub-authors a { color: var(--black); transition: color .15s; }
     .pub-authors a:hover { color: var(--soft); }
     .pub-venue {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--black);
       line-height: 1.5;
       margin-bottom: 12px;
     }
     .pub-venue b { color: var(--black); font-weight: 600; }
     .pub-desc {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--soft);
       line-height: 1.65;
       max-width: 640px;
@@ -181,7 +184,7 @@
     }
     .links { display: flex; flex-wrap: wrap; gap: 6px; }
     .links a {
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 500;
       padding: 4px 13px;
       background: var(--chip);
@@ -191,73 +194,511 @@
     }
     .links a:hover { background: #e8e8ed; }
 
-    /* ── Experience timeline ── */
-    .timeline {
-      position: relative;
-      padding-left: 28px;
-    }
-    .timeline::before {
+    /* ── Experience ── */
+    .exp-list { position: relative; display: flex; flex-direction: column; gap: 44px; }
+    .exp-item { position: relative; display: flex; gap: 18px; align-items: flex-start; padding-right: 30px; }
+    .exp-item::before {
       content: '';
       position: absolute;
-      left: 4px;
-      top: 6px;
-      bottom: 6px;
-      width: 1px;
+      right: 4px;
+      top: 10px;
+      bottom: -52px;
+      width: 2px;
       background: var(--rule);
     }
-    .tl-item {
-      position: relative;
-      padding: 0 0 32px;
-    }
-    .tl-item:last-child { padding-bottom: 4px; }
-    .tl-item::before {
+    .exp-item:last-child::before { display: none; }
+    .exp-item::after {
       content: '';
       position: absolute;
-      left: -28px;
-      top: 6px;
-      width: 9px;
-      height: 9px;
+      right: 0;
+      top: 5px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
-      background: var(--rule);
-      border: 2px solid #fff;
-      box-shadow: 0 0 0 1px var(--rule);
+      background: #fff;
+      border: 2px solid var(--rule);
     }
-    .tl-item.active::before {
+    .exp-item.active::after {
       background: var(--black);
-      box-shadow: 0 0 0 1px var(--black);
+      border-color: var(--black);
     }
+    .exp-date {
+      flex-shrink: 0;
+      width: 150px;
+      text-align: right;
+      padding-top: 2px;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--soft);
+      white-space: nowrap;
+    }
+    .exp-logo-box {
+      flex-shrink: 0;
+      width: 164px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 8px;
+    }
+    .exp-logo { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+    .exp-body { flex: 1; min-width: 0; padding-top: 3px; }
     .exp-org  { font-size: 15px; font-weight: 700; letter-spacing: -.15px; color: var(--black); }
-    .exp-meta { font-size: 13px; color: var(--soft); margin-top: 3px; margin-bottom: 5px; }
-    .exp-detail { font-size: 13.5px; color: var(--soft); line-height: 1.6; }
+    .exp-meta { font-size: 14.5px; line-height: 1.6; color: var(--soft); margin-top: 2px; margin-bottom: 4px; }
+    .exp-meta .role { display: block; }
+    .exp-meta .when { color: var(--faint); white-space: nowrap; }
+    .exp-meta .when::before { content: "\00b7  "; }
+    .exp-detail { font-size: 14.5px; color: var(--soft); line-height: 1.6; }
     .exp-detail a { color: var(--soft); border-bottom: 1px solid transparent; transition: border-color .15s; }
     .exp-detail a:hover { border-color: var(--soft); }
 
     /* ── Service ── */
+    .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .service-item {
-      padding: 10px 0;
-      font-size: 14.5px;
+      padding: 24px 26px;
+      border-radius: 20px;
+      background: var(--band);
+      font-size: 15px;
       color: var(--mid);
-      line-height: 1.7;
+      line-height: 1.65;
     }
-    .service-item b { font-weight: 600; color: var(--black); }
+    .service-item b { display: block; margin-bottom: 6px; font-size: 17px; font-weight: 600; letter-spacing: -.2px; color: var(--black); }
     .service-item a { color: var(--mid); border-bottom: 1px solid var(--rule); transition: border-color .15s; }
     .service-item a:hover { border-color: var(--mid); }
 
     /* ── Footer ── */
     footer {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 24px 24px 40px;
-      border-top: 1px solid var(--rule);
-      font-size: 12px;
+      padding: 28px 24px 44px;
+      background: var(--band);
+      border-top: 1px solid var(--hair);
+      font-size: 12.5px;
       color: var(--faint);
       text-align: center;
     }
+    footer a { color: var(--faint); border-bottom: 1px solid var(--rule); }
 
-    /* ── Responsive ── */
+    /* ── Surfaces & chapter palette ── */
+    :root {
+      --band: #f5f5f7;
+      --hair: #e5e5ea;
+      --c1: #1f5fbf; --c1-t: #eaf1fb;
+      --c2: #b45309; --c2-t: #fcf1e5;
+      --c3: #c2185b; --c3-t: #fbeaf1;
+      --c4: #6d28d9; --c4-t: #f2ecfd;
+    }
+    .c1 { --c: var(--c1); --ct: var(--c1-t); }
+    .c2 { --c: var(--c2); --ct: var(--c2-t); }
+    .c3 { --c: var(--c3); --ct: var(--c3-t); }
+    .c4 { --c: var(--c4); --ct: var(--c4-t); }
+    .mono { font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace; }
+
+    .hero-bio a.ref {
+      display: inline-grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--c);
+      color: #fff;
+      font-size: 9.5px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0;
+      vertical-align: 2px;
+      transition: transform .15s;
+    }
+    .hero-bio a.ref:hover { transform: scale(1.15); }
+
+    .ctx-word {
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--c1), var(--c2) 36%, var(--c3) 66%, var(--c4));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .8);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .nav-name { font-size: 15px; font-weight: 700; letter-spacing: -.3px; white-space: nowrap; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--soft);
+      white-space: nowrap;
+      transition: color .15s;
+    }
+    .nav-links a:hover, .nav-links a.on { color: var(--black); }
+    .sec { scroll-margin-top: 88px; }
+    .chapter, .pub-row { scroll-margin-top: 64px; }
+
+    /* ── Section headers: eyebrow + statement ── */
+    .eyebrow {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      color: var(--soft);
+      margin-bottom: 12px;
+    }
+    .sec h2.thesis-title { max-width: 780px; line-height: 1.1; }
+
+    /* ── Research: thesis ── */
+    .thesis-intro { max-width: 700px; }
+    .thesis-intro p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+    .thesis-intro strong { font-weight: 600; color: var(--black); }
+
+    /* ── Research: the thread (prelude + chapters strung on one rail) ── */
+    .chapters {
+      --indent: 52px;   /* card offset from the rail column */
+      --rail: 18px;     /* x of the thread */
+      --dot: 14px;
+      --head: 49px;     /* y of a node inside its item */
+      --next-head: 49px;
+      --gap: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+      margin-top: 56px;
+      padding-left: var(--indent);
+    }
+    .chapters > * { position: relative; }
+    .chapters > *::before {  /* thread segment: this node → next node */
+      content: '';
+      position: absolute;
+      left: calc(var(--rail) - var(--indent) - 1px);
+      top: var(--head);
+      bottom: calc(-1 * (var(--gap) + var(--next-head)));
+      width: 2px;
+      background: linear-gradient(var(--c), var(--cn));
+    }
+    .chapters > *::after {  /* node */
+      content: '';
+      position: absolute;
+      z-index: 1;
+      left: calc(var(--rail) - var(--indent) - var(--dot) / 2);
+      top: calc(var(--head) - var(--dot) / 2);
+      width: var(--dot);
+      height: var(--dot);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--c);
+      box-shadow: 0 0 0 6px var(--band);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .chapter { --dot: 34px; }
+    .chapter::after { content: attr(data-n); }
+    /* newest first, like Publications and Experience: 04 → 03 → 02 → 01 → prelude */
+    .chapter.c4 { --cn: var(--c3); }
+    .chapter.c3 { --cn: var(--c2); }
+    .chapter.c2 { --cn: var(--c1); }
+    .chapter.c1 { --cn: #aeaeb2; --next-head: 10px; }  /* next node is the prelude's small dot */
+    .prelude { --head: 10px; --c: #aeaeb2; }
+    .prelude::before { display: none; }  /* the thread starts here */
+    .prelude::after { background: var(--band); border: 2px solid var(--c); }
+    .chapters { position: relative; }
+    .chapters::before {  /* still being written: the thread keeps rising above the newest chapter */
+      content: '';
+      position: absolute;
+      left: calc(var(--rail) - 1px);
+      top: -44px;
+      height: calc(44px + var(--head));
+      width: 2px;
+      background: repeating-linear-gradient(to top, var(--c4) 0 5px, transparent 5px 11px);
+      -webkit-mask-image: linear-gradient(to top, #000 35%, transparent);
+      mask-image: linear-gradient(to top, #000 35%, transparent);
+    }
+    .chapter.c4::after { background: #fff; border: 2.5px solid var(--c); color: var(--c); }
+
+    /* ── Research: prelude ── */
+    .prelude .tag { display: block; line-height: 20px; font-size: 15px; font-weight: 600; letter-spacing: -.01em; color: var(--soft); }  /* same type as the section eyebrows */
+    .prelude p { margin-top: 6px; font-size: 15px; line-height: 1.7; color: var(--mid); max-width: 700px; }
+    .prelude strong { font-weight: 600; color: var(--black); }
+    .prelude a { color: var(--black); border-bottom: 1px solid var(--rule); transition: border-color .15s; }
+    .prelude a:hover { border-color: var(--black); }
+    .prelude a.c1, .prelude a.c2 { color: var(--c); font-weight: 600; border-color: var(--ct); }
+
+    /* ── Research: chapter cards ── */
+    .chapter { padding: 32px 34px 30px; border-radius: 24px; background: #fff; }
+    .ch-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 34px;
+      margin-bottom: 8px;
+    }
+    .ch-axis {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.6px;
+      color: var(--c);
+    }
+    .ch-years { margin-left: auto; font-size: 24px; font-weight: 600; letter-spacing: -.5px; color: var(--mid); font-variant-numeric: tabular-nums; }
+    .ch-title {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -1.3px;
+      line-height: 1.12;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    .ch-lede {
+      max-width: 700px;
+      margin-bottom: 18px;
+      font-size: 19px;
+      line-height: 1.45;
+      letter-spacing: -.2px;
+      color: var(--soft);
+    }
+    .ch-lede b { font-weight: 600; color: var(--black); }
+    .ch-story {
+      font-size: 15.5px;
+      line-height: 1.72;
+      color: var(--mid);
+      max-width: 700px;
+      margin-bottom: 22px;
+    }
+    .ch-story em, .ch-story strong { font-style: normal; font-weight: 600; color: var(--black); }
+    .ch-story a { font-weight: 600; color: var(--black); border-bottom: 1px solid var(--rule); transition: border-color .15s; }
+    .ch-story a:hover { border-color: var(--black); }
+    .works { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .work {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: var(--band);
+      transition: background .15s;
+    }
+    .work:hover { background: #ececf0; }
+    .work.aside { grid-column: 1 / -1; background: #fff; border: 1px dashed #d2d2d7; }
+    .work.aside:hover { background: var(--band); }
+    .work.feature { grid-column: 1 / -1; flex-direction: row; gap: 20px; align-items: flex-start; }
+    .work-img {
+      flex-shrink: 0;
+      width: 200px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
+    }
+    .work-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .work-kind { font-size: 13px; font-weight: 600; color: var(--c); }  /* same type as the chapter chips */
+    .work-title { font-size: 14.5px; font-weight: 700; line-height: 1.4; letter-spacing: -.15px; }
+    .work-take { font-size: 14px; line-height: 1.55; color: var(--mid); }
+    .work-meta { margin-top: auto; padding-top: 4px; font-size: 12.5px; color: var(--soft); }
+    .work-meta b { font-weight: 600; color: var(--mid); }
+    .now-card {
+      padding: 14px 18px;
+      border: 1px dashed var(--c);
+      border-radius: 14px;
+      font-size: 13px;
+      color: var(--soft);
+    }
+    .now-card b { color: var(--c); font-weight: 600; }
+    .now-card a { color: var(--mid); border-bottom: 1px solid var(--rule); transition: border-color .15s; }
+    .now-card a:hover { border-color: var(--mid); }
+
+    /* ── Research: the open question (one dark tile closes the story) ── */
+    .next {
+      margin-top: 44px;
+      padding: 40px 44px 36px;
+      border-radius: 24px;
+      background: #1d1d1f;
+      color: #f5f5f7;
+    }
+    .next h3 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -.8px;
+      line-height: 1.25;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .next h3 .q { color: #86868b; }
+    .next .c1 { --c: #86b6ff; }
+    .next .c2 { --c: #ffae6b; }
+    .next .c3 { --c: #ff82b6; }
+    .next .c4 { --c: #bea6ff; }
+    .chain { font-size: 13px; line-height: 1.8; color: #6e6e73; margin-bottom: 14px; }
+    .chain span { color: var(--c); font-weight: 600; }
+    .ask { font-size: 15px; color: #a1a1a6; }
+    .ask a { color: #fff; border-bottom: 1px solid rgba(255, 255, 255, .35); transition: border-color .15s; }
+    .ask a:hover { border-color: #fff; }
+
+    /* ── Publications: chapter chip + filter ── */
+    .links a.ch-chip {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--ct);
+      color: var(--c);
+      font-weight: 600;
+    }
+    .links a.ch-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--c); }
+    .links a.ch-chip:hover { background: var(--ct); box-shadow: inset 0 0 0 1px var(--c); }
+    .pub-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: -12px 0 24px; }
+    .pub-filter[hidden], .pub-row[hidden] { display: none; }
+    .pub-filter button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 13px;
+      border: 1px solid var(--rule);
+      border-radius: 980px;
+      background: #fff;
+      color: var(--mid);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .pub-filter button::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--c, var(--black)); }
+    .pub-filter button span { color: var(--faint); font-variant-numeric: tabular-nums; }
+    .pub-filter button:hover { border-color: var(--c, var(--soft)); }
+    .pub-filter button[aria-pressed="true"] { background: var(--c, var(--black)); border-color: var(--c, var(--black)); color: #fff; }
+    .pub-filter button[aria-pressed="true"]::before { background: #fff; }
+    .pub-filter button[aria-pressed="true"] span { color: rgba(255, 255, 255, .7); }
+    .pub-filter button:focus-visible { outline: 2px solid var(--black); outline-offset: 2px; }
+
+    /* ── Experience: one white panel; each stint tagged with its chapter ── */
+    .panel { padding: 48px 40px; border-radius: 24px; background: #fff; }
+    .exp-ch {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 8px;
+      padding: 2px 9px;
+      border-radius: 980px;
+      background: var(--ct);
+      color: var(--c);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0;
+      white-space: nowrap;
+      vertical-align: 1px;
+    }
+    .exp-ch::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--c); }
+    .exp-ch.pre { --c: var(--soft); --ct: var(--band); }
+    .band:not(.grey) .panel { border: 1px solid var(--hair); }  /* Experience now sits on a white band */
+
+    /* ── Highlights: citation milestones and distinctions (metadata, not prose) ── */
+    .hl-badge {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 8px;
+      padding: 2px 9px;
+      border-radius: 980px;
+      background: var(--black);
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0;
+      white-space: nowrap;
+      vertical-align: 1px;
+    }
+    .work-meta .hl-badge { margin-left: 6px; font-size: 11px; }
+
+    /* ── Publications: summaries folded; pills stay visible on the grey band ── */
+    .pub-more { margin-bottom: 12px; }
+    .pub-more > summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--soft);
+      transition: color .15s;
+    }
+    .pub-more > summary::-webkit-details-marker { display: none; }
+    .pub-more > summary::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(-45deg);
+      transition: transform .15s;
+    }
+    .pub-more[open] > summary::before { transform: rotate(45deg); }
+    .pub-more > summary:hover { color: var(--black); }
+    .pub-more .pub-desc { margin: 8px 0 0; }
+    .band.grey .links a:not(.ch-chip) { background: #fff; }
+    .band.grey .links a:not(.ch-chip):hover { background: #e8e8ed; }
+    .exp-org a.org { border-bottom: 1px solid var(--rule); transition: border-color .15s; }
+    .exp-org a.org:hover { border-color: var(--black); }
+
     @media (max-width: 620px) {
+      .band { padding: 72px 0; }
+      .inner, .nav-inner { padding: 0 20px; }
+      .nav-name { display: none; }
+      .nav-links { width: 100%; justify-content: space-between; gap: 12px; }
+      .nav-links a { font-size: 13px; }
+      .sec h2 { font-size: 31px; letter-spacing: -1px; }
+      .thesis-intro p { font-size: 16px; }
+      .chapters { --indent: 34px; --rail: 12px; --dot: 12px; --head: 38px; --next-head: 38px; --gap: 16px; margin-top: 44px; }
+      .chapters > *::after { box-shadow: 0 0 0 4px var(--band); }
+      .chapter { --dot: 24px; }
+      .chapter::after { font-size: 10px; }
+      .chapter { padding: 24px 18px 20px; border-radius: 20px; }
+      .ch-head { height: auto; min-height: 28px; flex-wrap: wrap; row-gap: 2px; }  /* the year may drop to its own line */
+      .ch-axis { font-size: 21px; line-height: 28px; }
+      .ch-years { flex-basis: 100%; margin-left: 0; font-size: 17px; }  /* phone: the year gets its own line, under the label */
+      .ch-title { font-size: 27px; letter-spacing: -.9px; }
+      .ch-lede { font-size: 17px; }
+      .works { grid-template-columns: 1fr; }
+      .work.feature { flex-direction: column; }
+      .work-img { width: 100%; height: 160px; }
+      .next { padding: 28px 22px 24px; border-radius: 20px; }
+      .next h3 { font-size: 22px; }
+      .links a.ch-chip { margin-left: 0; }
+      .panel { padding: 32px 18px; border-radius: 20px; }
+      .panel .exp-list { gap: 36px; }
+      .panel .exp-item::before { bottom: -44px; }  /* gap + 8: the line still reaches the next dot */
+      /* phone: date becomes a small label above the org; text column roughly doubles */
+      .panel .exp-item { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 14px; row-gap: 2px; padding-right: 22px; }
+      .panel .exp-logo-box { grid-row: 1 / span 2; width: 64px; height: 44px; padding: 2px; }
+      .panel .exp-date { grid-column: 2; grid-row: 1; width: auto; padding-top: 0; text-align: left; font-size: 12px; white-space: nowrap; }
+      .panel .exp-body { grid-column: 2; grid-row: 2; padding-top: 0; }
+      .panel .exp-meta .when { display: block; }  /* role date on its own line */
+      .panel .exp-meta .when::before { content: none; }
+      .exp-ch { margin: 4px 0 0; }
+      .service-grid { grid-template-columns: 1fr; }
       .hero { grid-template-columns: 1fr; padding: 48px 0 64px; gap: 32px; }
-      .hero-photo { width: 120px; height: 120px; order: -1; }
+      .hero-photo { width: 132px; height: 165px; margin-top: 0; border-radius: 18px; order: -1; }
       h1 { font-size: 40px; letter-spacing: -2px; }
       .pub-row { grid-template-columns: 1fr; }
       .pub-img { width: 100%; height: 160px; }
@@ -271,262 +712,603 @@
 
 <body>
 
-  <div class="wrap">
+  <nav class="nav" aria-label="Sections">
+    <div class="nav-inner">
+      <a class="nav-name" href="#top">Yunqing Zhao</a>
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#service">Service</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="band band-hero">
+  <div class="inner">
 
     <!-- Hero -->
-    <div class="hero">
+    <div class="hero" id="top">
       <div>
         <h1>Yunqing Zhao</h1>
         <p class="hero-bio">
-          I was a Research Scientist at <b>TikTok / ByteDance</b>, Singapore. I work on multimodal AI, with a focus on data-centric, scalable post-training for vision-language models.
+          Senior AI Researcher at <a href="https://hy.tencent.ai/">Tencent Hy</a>. I received my PhD (<a href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/">Outstanding Thesis Award</a>) from <a href="https://www.sutd.edu.sg/">SUTD</a>, 2024, advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Prof. Ngai-Man Cheung</a>. I was a Senior Research Scientist at TikTok / ByteDance, and before that a research intern at <a href="https://sail.sea.com/research">Sea AI Lab</a>, <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/">Microsoft Research Asia</a>, and <a href="https://www.bytedance.com/en/">ByteDance AI Lab</a>.
           <br><br>
-          PhD (<a href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/">Outstanding Thesis Award</a>) from <a href="https://sutd.edu.sg/">SUTD</a>, 2024. Previously at <a href="https://sail.sea.com/research">Sea AI Lab</a>, <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/">Microsoft Research Asia</a>, and <a href="https://www.bytedance.com/en/">ByteDance AI Lab</a>.
+          One thread runs through my work: <span class="ctx-word">context</span>. I study how models learn from very little of it <a class="ref c1" href="#ch1" title="Chapter 01 &middot; Scarce context" aria-label="Chapter 01, Scarce context">01</a>, how it can be turned against them <a class="ref c2" href="#ch2" title="Chapter 02 &middot; Untrusted context" aria-label="Chapter 02, Untrusted context">02</a>, how they learn to build their own <a class="ref c3" href="#ch3" title="Chapter 03 &middot; Constructed context" aria-label="Chapter 03, Constructed context">03</a>, and how RL teaches agents which context to seek <a class="ref c4" href="#ch4" title="Chapter 04 &middot; Sought context" aria-label="Chapter 04, Sought context">04</a>. Each gets its own chapter below.
+          <br><br>
+          My work has been published at NeurIPS, ICML, ICLR, CVPR, ICCV, and ECCV, and in TIP and TPAMI.
         </p>
         <div class="chips">
           <a href="mailto:yunqing.z.0817@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a>
-          <a href="https://www.linkedin.com/in/yunqing-zhao/" target="_blank">
+          <a href="https://www.linkedin.com/in/yunqing-zhao/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>LinkedIn</a>
-          <a href="https://github.com/yunqing-me" target="_blank">
+          <a href="https://github.com/yunqing-me" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"></path></svg>GitHub</a>
-          <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en" target="_blank">
+          <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&amp;hl=en" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"></path></svg>Google Scholar</a>
         </div>
-        <p class="hero-slogan"><span class="prompt">~/</span> Driven by data, assisted by algorithms.</p>
       </div>
-      <img class="hero-photo" src="img/avatar.jpeg" alt="Yunqing Zhao">
+      <img class="hero-photo" width="250" height="312" src="img/avatar-2026.jpg" alt="Yunqing Zhao">
     </div>
 
-    <!-- Publications -->
-    <div id="publications" class="sec"><h2>Selected Publications</h2></div>
-    <p class="pub-note"><sup>†</sup> corresponding &nbsp;·&nbsp; <sup>*</sup> equal contribution &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&hl=en">Full list on Google Scholar</a></p>
+  </div>
+  </header>
 
-    <div class="pub-row">
+  <section class="band grey">
+  <div class="inner">
+
+    <!-- Research: the context story -->
+    <div id="research" class="sec">
+      <p class="eyebrow">Research</p>
+      <h2 class="thesis-title">Weights hold what a model knows. <span class="ctx-word">Context</span> decides what it does.</h2>
+    </div>
+    <div class="thesis-intro">
+      <p>A trained model is a fixed prior. Everything it does afterwards (adapting to a new domain, following a prompt, answering a question about an image, calling a tool) is conditioned on a <strong>context</strong>. In-context learning made this explicit: same weights, different context, different behavior. Many failures are failures of context. With too little, a model overfits. With the wrong kind, it can be steered. And the right kind is often not given at all; it has to be gathered.</p>
+      <p>My research has tracked the context as it moved: from a few examples that had to be written <strong>into the weights</strong>, to an open input that <strong>anyone can tamper with</strong>, to evidence the model <strong>assembles for itself</strong>, and now to context an agent <strong>learns to seek</strong>.</p>
+      <p>The chapters below trace that path.</p>
+    </div>
+
+    <div class="next">
+      <h3>What a model knows is converging. What it chooses to look at is where the gap opens.</h3>
+      <p class="chain mono"><span class="c1">written into the weights</span> &rarr; <span class="c2">open, and contested</span> &rarr; <span class="c3">built by the model</span> &rarr; <span class="c4">sought by the agent</span> &rarr; <span style="opacity:.4">&hellip;</span></p>
+      <p class="ask"><a href="mailto:yunqing.z.0817@gmail.com">I am always glad to chat more.</a></p>
+    </div>
+
+    <div class="chapters">
+
+      <article class="chapter c4" id="ch4" data-n="04">
+        <div class="ch-head">
+          <span class="ch-axis">Sought context</span>
+          <span class="ch-years">2026 &rarr;</span>
+        </div>
+        <h3 class="ch-title">Multimodal LLMs, agents &amp; media generation</h3>
+        <p class="ch-lede"><b>Teach it which context to seek.</b> Agents that go and get what they need.</p>
+        <p class="ch-story">CodeDance used RL to teach a multimodal model when a tool is worth calling; ThinkGen used it to teach one model to write another&rsquo;s instructions. At <strong>Tencent Hy</strong> I work on multimodal LLMs and agents with a data-centric approach: teaching them what to look at, which tool to call, and when the evidence they have gathered is enough and accurate.</p>
+        <p class="ch-story">Some of this work shows up in <a href="https://hycreator.tencent.com/">HyCreator</a>, a long-video agent that turns a short brief into a film. Before it assembles picture and sound, it creates references for each character, location and prop, asks a subagent for an independent review, and checks every clip for continuity.</p>
+        <div class="now-card"><b>Now</b> &middot; Senior AI Researcher, Tencent Hy &middot; <a href="https://hy.tencent.ai/">hy.tencent.ai</a></div>
+      </article>
+
+      <article class="chapter c3" id="ch3" data-n="03">
+        <div class="ch-head">
+          <span class="ch-axis">Constructed context</span>
+          <span class="ch-years">2025&ndash;26</span>
+        </div>
+        <h3 class="ch-title">Multimodal LLMs &amp; tool use</h3>
+        <p class="ch-lede"><b>Let the model build its context.</b> Pixels, time and code, turned into evidence it can read.</p>
+        <p class="ch-story">Today&rsquo;s multimodal models don&rsquo;t just read their context; they have to build it. Pixels must become tokens a language model can read and write: a vision encoder pretrained to speak (<em>GenLIP</em>), and segmentation masks written as compact text (<em>Text4Seg++</em>). A long video mixes timestamps, saliency and captions, so each kind of token gets its own expert (<em>TimeExpert</em>). One model can even compose another&rsquo;s context: an MLLM reasons first, then writes the instruction a diffusion transformer draws from (<em>ThinkGen</em>). And when one look isn&rsquo;t enough, the model writes and runs code that draws boxes, lines and plots back into its own context, with a reward that keeps it from calling tools it doesn&rsquo;t need (<em>CodeDance</em>). This body of work also contributed training data and evaluation to <a href="https://arxiv.org/abs/2609.28554">Pistis</a>, a family of 27B and 9B multimodal models.</p>
+        <div class="works">
+          <a class="work feature" href="#p-codedance">
+            <img class="work-img" src="img/codedance_pipe.jpeg" alt="" loading="lazy">
+            <span class="work-body">
+              <span class="work-kind">Evidence on demand</span>
+              <span class="work-title">CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning</span>
+              <span class="work-take">Executable code as a general visual solver: it composes tools and renders evidence it can check. A balanced tool-calling reward curbs overuse, and unseen tool compositions emerge during RL.</span>
+              <span class="work-meta"><b>CVPR 2026</b> &middot; tech lead, corresponding author</span>
+            </span>
+          </a>
+          <a class="work" href="#p-genlip">
+            <span class="work-kind">Vision that speaks</span>
+            <span class="work-title">Let ViT Speak: Generative Language-Image Pre-training</span>
+            <span class="work-take">Pretrain the ViT to emit language tokens directly, so its features arrive in the language model&rsquo;s own terms.</span>
+            <span class="work-meta"><b>ECCV 2026</b> &middot; co-author</span>
+          </a>
+          <a class="work" href="#p-text4seg">
+            <span class="work-kind">Masks as text</span>
+            <span class="work-title">Text4Seg++: Advancing Image Segmentation via Generative Language Modeling</span>
+            <span class="work-take">Extends Text4Seg (ICLR 2025): box-wise semantic descriptors turn masks into &ldquo;semantic bricks&rdquo;, so segmentation becomes next-brick prediction, with no mask decoder.</span>
+            <span class="work-meta"><b>TPAMI 2026</b> &middot; tech lead, corresponding author</span>
+          </a>
+          <a class="work" href="#p-timeexpert">
+            <span class="work-kind">Routing time</span>
+            <span class="work-title">TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding</span>
+            <span class="work-take">A mixture-of-experts Video-LLM that routes each task&rsquo;s tokens to a specialist, reaching state of the art on dense captioning, moment retrieval and highlight detection.</span>
+            <span class="work-meta"><b>ICCV 2025</b> &middot; co-author</span>
+          </a>
+          <a class="work" href="#p-thinkgen">
+            <span class="work-kind">Think, then draw</span>
+            <span class="work-title">ThinkGen: Generalized Thinking for Visual Generation</span>
+            <span class="work-take">Chain-of-thought for image generation: the MLLM plans, the diffusion transformer draws, and alternating RL (SepGRPO) trains both.</span>
+            <span class="work-meta"><b>CVPR 2026</b> &middot; co-author</span>
+          </a>
+          <a class="work aside" href="#p-pistis">
+            <span class="work-kind">Data &amp; evaluation</span>
+            <span class="work-title">Pistis Technical Report</span>
+            <span class="work-take">27B and 9B multimodal models trained with IDRL &mdash; alternating on-policy distillation and RL in one loop &mdash; for stronger reasoning and long-horizon agentic tasks.</span>
+            <span class="work-meta"><b>Technical Report</b> &middot; training data &amp; evaluation</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="chapter c2" id="ch2" data-n="02">
+        <div class="ch-head">
+          <span class="ch-axis">Untrusted context</span>
+          <span class="ch-years">2023-2024</span>
+        </div>
+        <h3 class="ch-title">AI safety for multimodal models</h3>
+        <p class="ch-lede"><b>Guard what the model reads.</b> An open input is an attack surface, and a key.</p>
+        <p class="ch-story">If a context can teach a model, it can also mislead it. Once large models read images and prompts at inference time, the context became an interface, and whoever writes into it can steer the model. With only black-box access, an adversarial image makes open VLMs such as MiniGPT-4 and LLaVA give the attacker&rsquo;s chosen response (<em>AttackVLM</em>). The same channel can serve the owner: a trigger prompt only they know makes a watermarked Stable Diffusion draw a predefined watermark, such as a scannable QR code, while other prompts behave as before (<em>WatermarkDM</em>, US patent).</p>
+        <div class="works">
+          <a class="work" href="#p-attackvlm">
+            <span class="work-kind">Attack through the image</span>
+            <span class="work-title">On Evaluating Adversarial Robustness of Large Vision-Language Models</span>
+            <span class="work-take">Targeted attacks crafted on CLIP and BLIP transfer to open VLMs, and black-box queries make them stronger.</span>
+            <span class="work-meta"><b>NeurIPS 2023</b> &middot; first author <span class="hl-badge" title="Google Scholar, Sep 2026">600+ citations</span></span>
+          </a>
+          <a class="work" href="#p-watermark">
+            <span class="work-kind">A key in the prompt</span>
+            <span class="work-title">A Recipe for Watermarking Diffusion Models</span>
+            <span class="work-take">One recipe, two settings: a hidden trigger for text-to-image models, and a binary string carried in the training data for unconditional ones.</span>
+            <span class="work-meta"><b>Technical Report</b> &middot; <b>US Patent</b> &middot; first author <span class="hl-badge" title="Google Scholar, Sep 2026">250+ citations</span></span>
+          </a>
+        </div>
+      </article>
+
+      <article class="chapter c1" id="ch1" data-n="01">
+        <div class="ch-head">
+          <span class="ch-axis">Scarce context</span>
+          <span class="ch-years">2022&ndash;23</span>
+        </div>
+        <h3 class="ch-title">Few-shot learning &amp; knowledge transfer</h3>
+        <p class="ch-lede"><b>Learn from a little context.</b> Fewer examples, so the prior matters more.</p>
+        <p class="ch-story">In few-shot image generation, a new domain arrives as about ten images, and the only place to put them is the weights. Adaptation becomes a negotiation between context and prior: what should a pretrained model keep, and what should the few examples overwrite? We found that it mostly fails by collapsing onto the examples (<em>A Closer Look</em>), that the prior worth keeping depends on the target (<em>AdAM</em>), and that some of it has to be actively forgotten (<em>RICK</em>). <em>FS-BAN</em> asks the same question of classifiers facing domains they have never seen. In-context learning answers it without gradients; this was the gradient version.</p>
+        <div class="works">
+          <a class="work" href="#p-fsig">
+            <span class="work-kind">Diversity</span>
+            <span class="work-title">A Closer Look at Few-shot Image Generation</span>
+            <span class="work-take">In a unified testbed, the main failure of few-shot adaptation is lost diversity. A mutual-information objective keeps it.</span>
+            <span class="work-meta"><b>CVPR 2022</b> &middot; first author <span class="hl-badge" title="Google Scholar, Sep 2026">100+ citations</span></span>
+          </a>
+          <a class="work" href="#p-adam">
+            <span class="work-kind">What to keep</span>
+            <span class="work-title">Few-Shot Image Generation via Adaptation-Aware Kernel Modulation</span>
+            <span class="work-take">Far from the source domain, state-of-the-art methods do no better than a simple baseline. AdAM selects the source knowledge that matters for the target, parameter-efficiently.</span>
+            <span class="work-meta"><b>NeurIPS 2022</b> &middot; co-first author</span>
+          </a>
+          <a class="work" href="#p-rick">
+            <span class="work-kind">What to forget</span>
+            <span class="work-title">Exploring Incompatible Knowledge Transfer in Few-Shot Image Generation</span>
+            <span class="work-take">Fine-tuning can&rsquo;t remove knowledge that conflicts with the new domain. RICK finds the incompatible filters and prunes them.</span>
+            <span class="work-meta"><b>CVPR 2023</b> &middot; first author</span>
+          </a>
+          <a class="work" href="#p-fsban">
+            <span class="work-kind">Unseen domains</span>
+            <span class="work-title">FS-BAN: Born-Again Networks for Domain Generalization Few-shot Classification</span>
+            <span class="work-take">Cross-domain few-shot classification: born-again distillation improves generalization with no extra parameters or data.</span>
+            <span class="work-meta"><b>TIP 2023</b> &middot; first author</span>
+          </a>
+          <a class="work aside" href="#p-lskd">
+            <span class="work-kind">Side note &middot; distillation</span>
+            <span class="work-title">Revisiting Label Smoothing &amp; Knowledge Distillation Compatibility</span>
+            <span class="work-take">What does a teacher&rsquo;s output actually carry? Systematic diffusion erodes a label-smoothed teacher&rsquo;s benefit at high temperature; at low temperature, systematic diffusion reliably produces strong students.</span>
+            <span class="work-meta"><b>ICML 2022</b> &middot; co-second author <span class="hl-badge">Spotlight</span></span>
+          </a>
+        </div>
+      </article>
+
+      <div class="prelude" id="prelude">
+        <span class="tag">Prelude &middot; 2020</span>
+        <p>Two seeds. Explanation-guided training helped cross-domain few-shot classifiers generalize from a handful of examples (<a href="https://ieeexplore.ieee.org/document/9412941">ICPR</a>, <a href="https://github.com/SunJiamei/few-shot-lrp-guided">code</a>) <span class="hl-badge" title="Google Scholar, Sep 2026">150+ citations</span>, and a sparse adversarial attack on object detectors placed 10th of 1,701 in the CIKM AnalytiCup (<a href="https://ceur-ws.org/Vol-2881/paper5.pdf">paper</a>, <a href="https://github.com/invoker-LL/L0-attack-on-object-detector-NMS">code</a>). The first grew into <a class="c1" href="#ch1">Chapter 01</a>, the second into <a class="c2" href="#ch2">Chapter 02</a>.</p>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+  <section class="band">
+  <div class="inner">
+
+    <!-- Experience -->
+    <div id="experience" class="sec"><p class="eyebrow">Experience</p><h2>Where the chapters were written.</h2></div>
+
+    <div class="panel">
+        <div class="exp-list">
+          <div class="exp-item active">
+            <div class="exp-logo-box"><img class="exp-logo" src="img/logo-tencent-hunyuan.png" alt="Tencent Hy" loading="lazy"></div>
+            <div class="exp-body">
+              <div class="exp-org"><a class="org" href="https://hy.tencent.ai/">Tencent Hy</a>, Singapore<a class="exp-ch c4" href="#ch4">04 &middot; Sought context</a></div>
+              <div class="exp-meta">Senior AI Researcher, Foundation Model Dept.</div>
+            </div>
+            <div class="exp-date">Jun 2026 &ndash; Present</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo-box"><img class="exp-logo" src="img/logo-tiktok.svg" alt="TikTok / ByteDance" loading="lazy"></div>
+            <div class="exp-body">
+              <div class="exp-org">TikTok / ByteDance, Singapore<a class="exp-ch c3" href="#ch3">03 &middot; Constructed context</a></div>
+              <div class="exp-meta"><span class="role">Senior Research Scientist <span class="when">Jan &ndash; Jun 2026</span></span><span class="role">Research Scientist <span class="when">Jul 2024 &ndash; Dec 2025</span></span></div>
+              <div class="exp-detail">With <a href="https://songbai.site/">Song Bai</a> and <a href="https://speedinghzl.github.io/">Zilong Huang</a>. Contributed training data and evaluation to Pistis (<a href="https://arxiv.org/abs/2609.28554"><b>Technical Report</b></a>), a family of 27B and 9B multimodal models.</div>
+            </div>
+            <div class="exp-date">Jul 2024 &ndash; Jun 2026</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo-box"><img class="exp-logo" src="img/logo-microsoft-research.jpg" alt="Microsoft Research" loading="lazy"></div>
+            <div class="exp-body">
+              <div class="exp-org">Microsoft Research Asia</div>
+              <div class="exp-meta">Research Intern.</div>
+            </div>
+            <div class="exp-date">2023&ndash;2024</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo-box"><img class="exp-logo" src="img/logo-sea-ai-lab.png" alt="Sea AI Lab" loading="lazy"></div>
+            <div class="exp-body">
+              <div class="exp-org">Sea AI Lab, Singapore<a class="exp-ch c2" href="#ch2">02 &middot; Untrusted context</a></div>
+              <div class="exp-meta">Research Intern</div>
+              <div class="exp-detail">With <a href="https://duchao0726.github.io/">Chao Du</a> and <a href="https://p2333.github.io/">Tianyu Pang</a>, advised by <a href="https://yanshuicheng.info/">Prof. Shuicheng Yan</a> and <a href="https://linmin.me/">Min Lin</a>.</div>
+            </div>
+            <div class="exp-date">2022&ndash;2023</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo-box"><img class="exp-logo" src="img/logo-bytedance.svg" alt="ByteDance" loading="lazy"></div>
+            <div class="exp-body">
+              <div class="exp-org">ByteDance AI Lab, Singapore<a class="exp-ch c1" href="#ch1">01 &middot; Scarce context</a></div>
+              <div class="exp-meta">Research Scientist Intern</div>
+              <div class="exp-detail">With <a href="https://henghuiding.github.io/">Henghui Ding</a> and <a href="https://huanghoujing.github.io/">Houjing Huang</a>.</div>
+            </div>
+            <div class="exp-date">2021&ndash;2022</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo-box"><img class="exp-logo" src="img/logo-st-engineering.png" alt="ST Engineering" loading="lazy"></div>
+            <div class="exp-body">
+              <div class="exp-org">ST Electronics-SUTD Cyber Security Lab<a class="exp-ch pre" href="#prelude">Prelude</a></div>
+              <div class="exp-meta">PhD Student Researcher</div>
+              <div class="exp-detail">Advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Prof. Ngai-Man Cheung</a>.</div>
+            </div>
+            <div class="exp-date">2020&ndash;2021</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-logo-box"><img class="exp-logo" src="img/logo-hku.png" alt="University of Hong Kong" loading="lazy"></div>
+            <div class="exp-body">
+              <div class="exp-org">University of Hong Kong</div>
+              <div class="exp-meta">MS Student &amp; Research Assistant</div>
+              <div class="exp-detail">Advised by <a href="https://ece.hku.hk/people/vtam/">Dr. Vincent Tam</a> and <a href="https://ece.hku.hk/people/wtfok/">Dr. Wilton Fok</a>.</div>
+            </div>
+            <div class="exp-date">2018&ndash;2019</div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+  </section>
+
+  <section class="band grey">
+  <div class="inner">
+
+    <!-- Publications -->
+    <div id="publications" class="sec"><p class="eyebrow">Publications</p><h2>Selected papers, one thread.</h2></div>
+    <p class="pub-note"><sup>†</sup> corresponding &nbsp;·&nbsp; <sup>*</sup> equal contribution &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&amp;hl=en">Full list on Google Scholar</a></p>
+    <div class="pub-filter" role="group" aria-label="Filter publications by chapter" hidden>
+      <button type="button" data-f="all" aria-pressed="true">All <span></span></button>
+      <button type="button" class="c3" data-f="3" aria-pressed="false">03 &middot; Constructed <span></span></button>
+      <button type="button" class="c2" data-f="2" aria-pressed="false">02 &middot; Untrusted <span></span></button>
+      <button type="button" class="c1" data-f="1" aria-pressed="false">01 &middot; Scarce <span></span></button>
+    </div>
+
+    <div class="pub-row" id="p-codedance" data-ch="3">
       <img class="pub-img" width="152" height="100" src="img/codedance_pipe.jpeg" alt="CodeDance">
       <div>
         <div class="pub-title"><span class="hl">CodeDance</span>: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning</div>
-        <div class="pub-authors">Qi Song<sup>*</sup>, Honglin Li<sup>*</sup>, Yingchen Yu, Haoyi Zhou, Lin Yang, Qi She, Song Bai, Zilong Huang<sup>†</sup>, <b>Yunqing Zhao<sup>†</sup></b></div>
+        <div class="pub-authors">Qi Song<sup>*</sup>, Honglin Li<sup>*</sup>, Yingchen Yu, Haoyi Zhou, Lin Yang, Song Bai, Qi She, Zilong Huang<sup>†</sup>, <b>Yunqing Zhao<sup>†</sup></b></div>
         <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026</div>
-        <div class="pub-desc">Do we always need to integrate tools for visual reasoning? While tool-augmented MLLMs have shown strong gains, indiscriminate tool invocation results in unnecessary computation and reasoning inefficiency. CodeDance learns <em>when</em> and <em>how</em> to use tools — and critically, when tool invocation is unnecessary. Through a difficulty-aware RL objective (RBAT), it achieves strong improvements across counting, chart QA, and visual search/math benchmarks while reducing reasoning turns.</div>
+        <details class="pub-more"><summary>Summary</summary>
+        <div class="pub-desc">Do we always need to integrate tools for visual reasoning? While tool-augmented MLLMs have shown strong gains, indiscriminate tool invocation results in unnecessary computation and reasoning inefficiency. CodeDance learns <em>when</em> and <em>how</em> to use tools &ndash; and critically, when tool invocation is unnecessary. Through a difficulty-aware RL objective (RBAT), it achieves strong improvements across counting, chart QA, and visual search/math benchmarks while reducing reasoning turns.</div>
+        </details>
         <div class="links">
           <a href="https://arxiv.org/abs/2512.17312">Paper</a>
           <a href="https://codedance-vl.github.io/">Webpage</a>
           <a href="https://github.com/CodeDance-VL/CodeDance">Code</a>
           <a href="https://huggingface.co/datasets/Peterwatwec/CodeDance-SFT">SFT Data</a>
           <a href="https://huggingface.co/datasets/Peterwatwec/CodeDance-RL">RL Data</a>
+          <a class="ch-chip c3" href="#ch3">03 &middot; Constructed context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="p-text4seg" data-ch="3">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/text4seg.jpg" alt="Text4Seg++">
       <div>
         <div class="pub-title"><span class="hl">Text4Seg++</span>: Advancing Image Segmentation via Generative Language Modeling</div>
-        <div class="pub-authors"><a href="https://mc-lan.github.io/">Mengcheng Lan</a>, Chaofeng Chen, J. Xu, Zongrui Li, Yiping Ke, Xudong Jiang, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao<sup>†</sup></b>, <a href="https://songbai.site/">Song Bai</a></div>
+        <div class="pub-authors"><a href="https://mc-lan.github.io/">Mengcheng Lan</a>, Chaofeng Chen, Jiaxing Xu, Zongrui Li, Yiping Ke, Xudong Jiang, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao<sup>†</sup></b>, <a href="https://songbai.site/">Song Bai</a></div>
         <div class="pub-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>), 2026</div>
+        <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">Can a multimodal LLM segment at the pixel level without bolting on a separate mask decoder? Text4Seg++ recasts segmentation as pure text generation via <em>semantic descriptors</em> that map each image patch to a text label, with a Row-wise Run-Length Encoding (R-RLE) that trims sequence length by 74% and speeds inference 3x. Reframing the task as <em>next-brick prediction</em>, it outperforms state-of-the-art models across natural and remote-sensing benchmarks with no task-specific fine-tuning, while staying compatible with existing MLLM backbones.</div>
+        </details>
         <div class="links">
           <a href="https://ieeexplore.ieee.org/abstract/document/11479916">Paper</a>
           <a href="https://arxiv.org/abs/2509.06321">arXiv</a>
+          <a class="ch-chip c3" href="#ch3">03 &middot; Constructed context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="p-pistis" data-ch="3">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/pistis.jpg" alt="Pistis">
+      <div>
+        <div class="pub-title">Pistis Technical Report</div>
+        <div class="pub-authors">Heyun Chen, Xiaohan Lan, Jiaxi Li, &hellip;, Xudong Zhang, <b>Yunqing Zhao</b>, Shuai Zheng</div>
+        <div class="pub-venue"><b>Technical Report</b>, 2026</div>
+        <details class="pub-more"><summary>Summary</summary>
+        <div class="pub-desc">Pistis is a family of 27B and 9B multimodal models built on Qwen3. Post-training uses Interleaved Distillation and RL (IDRL) &ndash; alternating on-policy distillation and RL within a single loop rather than sequentially &ndash; for stronger reasoning and long-horizon agentic tasks. Contribution: training data construction and evaluation.</div>
+        </details>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2609.28554">Paper</a>
+          <a href="https://pististeam.github.io/">Webpage</a>
+          <a class="ch-chip c3" href="#ch3">03 &middot; Constructed context</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-row" id="p-genlip" data-ch="3">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/genlip.jpg" alt="GenLIP">
       <div>
         <div class="pub-title"><span class="hl">Let ViT Speak</span>: Generative Language-Image Pre-training</div>
-        <div class="pub-authors"><a href="https://yanfangcs.github.io/">Yan Fang<sup>*</sup></a>, <a href="https://mc-lan.github.io/">Mengcheng Lan<sup>*</sup></a>, <a href="https://speedinghzl.github.io/">Zilong Huang<sup>†</sup></a>, Weixian Lei, <b>Yunqing Zhao</b>, Yujie Zhong, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, Qi She, Yao Zhao, Yunchao Wei<sup>†</sup></div>
+        <div class="pub-authors">Yan Fang<sup>*</sup>, <a href="https://mc-lan.github.io/">Mengcheng Lan<sup>*</sup></a>, <a href="https://speedinghzl.github.io/">Zilong Huang<sup>†</sup></a>, Weixian Lei, <b>Yunqing Zhao</b>, Yujie Zhong, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, Qi She, Yao Zhao, Yunchao Wei<sup>†</sup></div>
         <div class="pub-venue">European Conference on Computer Vision (<b>ECCV</b>), 2026</div>
-        <div class="pub-desc">What if a vision encoder were pretrained the way LLMs are — by simply predicting the next token? GenLIP makes the ViT itself generative: it reads image patches and emits language tokens directly under a plain language-modeling objective, dropping the contrastive two-tower setup and any separate text decoder. The result is a strikingly simple recipe that aligns visual features with the autoregressive nature of LLMs and transfers cleanly into multimodal models.</div>
+        <details class="pub-more"><summary>Summary</summary>
+        <div class="pub-desc">What if a vision encoder were pretrained the way LLMs are &ndash; by simply predicting the next token? GenLIP makes the ViT itself generative: it reads image patches and emits language tokens directly under a plain language-modeling objective, dropping the contrastive two-tower setup and any separate text decoder. The result is a strikingly simple recipe that aligns visual features with the autoregressive nature of LLMs and transfers cleanly into multimodal models.</div>
+        </details>
         <div class="links">
           <a href="https://arxiv.org/abs/2605.00809">Paper</a>
           <a href="https://yanfangcs.github.io/vitspeak/">Webpage</a>
           <a href="https://github.com/YanFangCS/GenLIP">Code</a>
           <a href="https://huggingface.co/collections/YanFang/genlip">Models</a>
+          <a class="ch-chip c3" href="#ch3">03 &middot; Constructed context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="p-thinkgen" data-ch="3">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/thinkgen.jpg" alt="ThinkGen">
+      <div>
+        <div class="pub-title"><span class="hl">ThinkGen</span>: Generalized Thinking for Visual Generation</div>
+        <div class="pub-authors">Siyu Jiao<sup>*</sup>, Yiheng Lin<sup>*</sup>, Yujie Zhong<sup>†</sup>, Qi She, Wei Zhou, Xiaohan Lan, <a href="https://speedinghzl.github.io/">Zilong Huang</a>, Fei Yu, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao</b>, Yao Zhao, Yunchao Wei<sup>†</sup></div>
+        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2026</div>
+        <details class="pub-more"><summary>Summary</summary>
+        <div class="pub-desc">Chain-of-thought reasoning has reshaped multimodal understanding, but in image generation it has stayed tied to specific scenarios. ThinkGen pairs a pretrained MLLM, which reasons about the user&rsquo;s intent and writes a tailored instruction, with a Diffusion Transformer that generates from it. A separable GRPO paradigm (SepGRPO) alternates reinforcement learning between the two modules, so they can be trained jointly across diverse datasets; the model reaches state-of-the-art results on multiple generation benchmarks.</div>
+        </details>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2512.23568">Paper</a>
+          <a href="https://github.com/jiaosiyuu/ThinkGen">Code</a>
+          <a href="https://huggingface.co/JSYuuu/ThinkGen">Models</a>
+          <a class="ch-chip c3" href="#ch3">03 &middot; Constructed context</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-row" id="p-timeexpert" data-ch="3">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/TimeExpert_teaser.png" alt="TimeExpert">
       <div>
         <div class="pub-title">TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding</div>
         <div class="pub-authors"><a href="https://mwxely.github.io/">Zuhao Yang</a>, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao</b>, <a href="https://personal.ntu.edu.sg/shijian.lu/">Shijian Lu<sup>†</sup></a>, <a href="https://songbai.site/">Song Bai</a></div>
         <div class="pub-venue">IEEE/CVF International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
-        <div class="pub-desc">Video temporal grounding bundles three distinct subtasks — localizing timestamps, scoring saliency, and generating text — yet most Video-LLMs push them all through identical pathways. TimeExpert is a Mixture-of-Experts Video-LLM that routes each task-specific token to a specialized expert, sharpening event modeling and efficiency to reach state-of-the-art on dense video captioning, moment retrieval, and highlight detection.</div>
+        <details class="pub-more"><summary>Summary</summary>
+        <div class="pub-desc">Video temporal grounding bundles three distinct subtasks &ndash; localizing timestamps, scoring saliency, and generating text &ndash; yet most Video-LLMs push them all through identical pathways. TimeExpert is a Mixture-of-Experts Video-LLM that routes each task-specific token to a specialized expert, sharpening event modeling and efficiency to reach state-of-the-art on dense video captioning, moment retrieval, and highlight detection.</div>
+        </details>
         <div class="links">
           <a href="https://arxiv.org/abs/2508.01699">Paper</a>
           <a href="https://mwxely.github.io/projects/yang2025time/index">Webpage</a>
-          <a href="https://mwxely.github.io/projects/yang2025time/index">Code</a>
+          <a class="ch-chip c3" href="#ch3">03 &middot; Constructed context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="p-watermark" data-ch="2">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/method-watermark.jpg" alt="WatermarkDM">
       <div>
-        <div class="pub-title">A Recipe for Watermarking (Multimodal) Diffusion Models</div>
+        <div class="pub-title">A Recipe for Watermarking Diffusion Models</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
-        <div class="pub-venue"><b>arXiv</b> Preprint, 2023 &nbsp;·&nbsp; <b>US Patent</b>, 2024</div>
+        <div class="pub-venue"><b>Technical Report</b>, 2023 &nbsp;·&nbsp; <b>US Patent</b>, 2024 <span class="hl-badge" title="Google Scholar, Sep 2026">250+ citations</span></div>
+        <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">We derive a recipe for efficiently watermarking state-of-the-art diffusion models (e.g., Stable Diffusion), via training from scratch or fine-tuning. Our recipe is straightforward but involves empirically ablated implementation details, providing a solid foundation for future research on watermarking DMs.</div>
+        </details>
         <div class="links">
           <a href="https://arxiv.org/abs/2303.10137">Paper</a>
           <a href="https://yunqing-me.github.io/WatermarkDM/">Webpage</a>
           <a href="https://github.com/yunqing-me/WatermarkDM">Code</a>
+          <a class="ch-chip c2" href="#ch2">02 &middot; Untrusted context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="p-attackvlm" data-ch="2">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/AttackVLM.jpeg" alt="AttackVLM">
       <div>
-        <div class="pub-title">Evaluating Adversarial Robustness of Large Vision-Language Models</div>
-        <div class="pub-authors"><b>Yunqing Zhao<sup>*</sup></b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>*†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://zhenxuan00.github.io/">Chongxuan Li</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
-        <div class="pub-venue">Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2023</div>
+        <div class="pub-title">On Evaluating Adversarial Robustness of Large Vision-Language Models</div>
+        <div class="pub-authors"><b>Yunqing Zhao<sup>*</sup></b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>*†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://zhenxuan00.github.io/">C. Li</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
+        <div class="pub-venue">Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2023 <span class="hl-badge" title="Google Scholar, Sep 2026">600+ citations</span></div>
+        <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">Large VLMs achieve unprecedented performance with visual inputs, but multimodal generation exacerbates safety concerns. We evaluate the adversarial robustness of open-source VLMs (e.g., MiniGPT-4, LLaVA, BLIP, UniDiffuser) in the most realistic high-risk setting, where adversaries have only black-box access and seek to elicit targeted responses.</div>
+        </details>
         <div class="links">
           <a href="https://arxiv.org/pdf/2305.16934.pdf">Paper</a>
           <a href="https://yunqing-me.github.io/AttackVLM/">Webpage</a>
           <a href="https://github.com/yunqing-me/AttackVLM">Code</a>
+          <a class="ch-chip c2" href="#ch2">02 &middot; Untrusted context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
-      <img class="pub-img" width="152" height="100" loading="lazy" src="img/incompatible-transfer.png" alt="RICK">
+    <div class="pub-row" id="p-rick" data-ch="1">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/incompatible-transfer.jpg" alt="RICK">
       <div>
         <div class="pub-title">Exploring Incompatible Knowledge Transfer in Few-Shot Image Generation</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://duchao0726.github.io/">Chao Du</a>, <a href="https://miladabd.github.io/">Milad Abdollahzadeh</a>, <a href="https://p2333.github.io/">Tianyu Pang</a>, <a href="https://linmin.me/">Min Lin</a>, <a href="https://yanshuicheng.info/">Shuicheng Yan</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
         <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2023</div>
+        <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">Through interpretable GAN dissection, we show that fine-tuning-based methods cannot effectively remove knowledge incompatible with the target domain after adaptation. We propose RICK, an efficient algorithm that estimates filter importance and prunes those incompatible with the target domain for few-shot image generation.</div>
+        </details>
         <div class="links">
           <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhao_Exploring_Incompatible_Knowledge_Transfer_in_Few-Shot_Image_Generation_CVPR_2023_paper.pdf">Paper</a>
           <a href="https://yunqing-me.github.io/RICK/">Webpage</a>
           <a href="https://github.com/yunqing-me/RICK">Code</a>
+          <a class="ch-chip c1" href="#ch1">01 &middot; Scarce context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="p-fsban" data-ch="1">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/fs-ban-method.png" alt="FS-BAN">
       <div>
         <div class="pub-title">FS-BAN: Born-Again Networks for Domain Generalization Few-shot Classification</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
         <div class="pub-venue">IEEE Transactions on Image Processing (<b>TIP</b>), 2023</div>
+        <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">We propose a method to improve generalizability for cross-domain few-shot classification using born-again networks. Our algorithm requires no additional parameters or training data and can be readily applied to existing FSC models, distilling dark knowledge from a teacher via multi-task objectives designed for cross-domain few-shot learning.</div>
+        </details>
         <div class="links">
           <a href="https://arxiv.org/abs/2208.10930">Paper</a>
           <a href="https://yunqing-me.github.io/Born-Again-FS/">Webpage</a>
           <a href="https://github.com/yunqing-me/Born-Again-FS">Code</a>
+          <a class="ch-chip c1" href="#ch1">01 &middot; Scarce context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
-      <img class="pub-img" width="152" height="100" loading="lazy" src="img/adam-compare.png" alt="AdAM">
+    <div class="pub-row" id="p-adam" data-ch="1">
+      <img class="pub-img" width="152" height="100" loading="lazy" src="img/adam-compare.jpg" alt="AdAM">
       <div>
         <div class="pub-title">Few-Shot Image Generation via Adaptation-Aware Kernel Modulation</div>
         <div class="pub-authors"><b>Yunqing Zhao<sup>*</sup></b>, <a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran<sup>*</sup></a>, <a href="https://miladabd.github.io/">Milad Abdollahzadeh<sup>*</sup></a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
         <div class="pub-venue">Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2022</div>
+        <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">When fine-tuning a pretrained generator on few-shot target samples, we show that state-of-the-art algorithms perform no better than a simple baseline when the target is distant from the source domain. We propose AdAM, a parameter-efficient and target-aware method to select source knowledge important for few-shot adaptation.</div>
+        </details>
         <div class="links">
           <a href="https://arxiv.org/abs/2210.16559">Paper</a>
           <a href="https://yunqing-me.github.io/AdAM/">Webpage</a>
           <a href="https://github.com/yunqing-me/AdAM">Code</a>
+          <a class="ch-chip c1" href="#ch1">01 &middot; Scarce context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="p-lskd" data-ch="1">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/ls-kd-compatibility.png" alt="LS-KD">
       <div>
         <div class="pub-title">Revisiting Label Smoothing &amp; Knowledge Distillation Compatibility: What was Missing?</div>
-        <div class="pub-authors"><a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran</a>, <a href="https://scholar.google.com.sg/citations?user=9SE3GYMAAAAJ&hl=en">Ngoc-Trung Tran<sup>*</sup></a>, <b>Yunqing Zhao<sup>*</sup></b>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
-        <div class="pub-venue">International Conference on Machine Learning (<b>ICML</b>), 2022</div>
-        <div class="pub-desc">Prior work disagreed on whether a label-smoothed teacher helps or hurts knowledge distillation. We pinpoint <em>systematic diffusion</em> as the missing piece — it erodes the benefits of distilling from an LS-trained teacher at high temperatures — and show that pairing an LS-trained teacher with low-temperature transfer reliably produces strong students.</div>
+        <div class="pub-authors"><a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran</a>, <a href="https://scholar.google.com.sg/citations?user=9SE3GYMAAAAJ&amp;hl=en">Ngoc-Trung Tran<sup>*</sup></a>, <b>Yunqing Zhao<sup>*</sup></b>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
+        <div class="pub-venue">International Conference on Machine Learning (<b>ICML</b>), 2022 <span class="hl-badge">Spotlight</span></div>
+        <details class="pub-more"><summary>Summary</summary>
+        <div class="pub-desc">Prior work disagreed on whether a label-smoothed teacher helps or hurts knowledge distillation. We pinpoint <em>systematic diffusion</em> as the missing piece &ndash; it erodes the benefits of distilling from an LS-trained teacher at high temperatures &ndash; and show that pairing an LS-trained teacher with low-temperature transfer reliably produces strong students.</div>
+        </details>
         <div class="links">
           <a href="https://proceedings.mlr.press/v162/chandrasegaran22a/chandrasegaran22a.pdf">Paper</a>
           <a href="https://keshik6.github.io/revisiting-ls-kd-compatibility/">Webpage</a>
           <a href="https://github.com/sutd-visual-computing-group/LS-KD-compatibility">Code</a>
+          <a class="ch-chip c1" href="#ch1">01 &middot; Scarce context</a>
         </div>
       </div>
     </div>
 
-    <div class="pub-row">
+    <div class="pub-row" id="p-fsig" data-ch="1">
       <img class="pub-img" width="152" height="100" loading="lazy" src="img/a-closer-look-fsig.png" alt="FSIG">
       <div>
         <div class="pub-title">A Closer Look at Few-shot Image Generation</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://henghuiding.github.io/">Henghui Ding</a>, <a href="https://huanghoujing.github.io/">Houjing Huang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
-        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2022</div>
+        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2022 <span class="hl-badge" title="Google Scholar, Sep 2026">100+ citations</span></div>
+        <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">We analyze existing few-shot image generation algorithms in a unified testbed and find that diversity degradation is the major issue during few-shot target adaptation. Our mutual information based algorithm alleviates this issue and achieves state-of-the-art performance on few-shot image generation tasks.</div>
+        </details>
         <div class="links">
           <a href="https://arxiv.org/abs/2205.03805">Paper</a>
           <a href="https://yunqing-me.github.io/A-Closer-Look-at-FSIG/">Webpage</a>
           <a href="https://github.com/yunqing-me/A-Closer-Look-at-FSIG">Code</a>
+          <a class="ch-chip c1" href="#ch1">01 &middot; Scarce context</a>
         </div>
       </div>
     </div>
 
-    <!-- Experience -->
-    <div id="experience" class="sec"><h2>Experience</h2></div>
+  </div>
+  </section>
 
-    <div class="exp-scroll-wrap">
-      <div class="exp-scroll">
-        <div class="timeline">
-          <div class="tl-item active">
-            <div class="exp-org">TikTok / ByteDance, Singapore</div>
-            <div class="exp-meta">Research Scientist &nbsp;·&nbsp; 2024 - 2026</div>
-            <div class="exp-detail">With <a href="https://songbai.site/">Song Bai</a> and <a href="https://speedinghzl.github.io/">Zilong Huang</a>.</div>
-          </div>
-          <div class="tl-item">
-            <div class="exp-org">Microsoft Research Asia</div>
-            <div class="exp-meta">Research Intern &nbsp;·&nbsp; 2023 - 2024</div>
-          </div>
-          <div class="tl-item">
-            <div class="exp-org">Sea AI Lab (SAIL), Singapore</div>
-            <div class="exp-meta">Research Intern &nbsp;·&nbsp; 2022 - 2023</div>
-            <div class="exp-detail">With <a href="https://duchao0726.github.io/">Chao Du</a> and <a href="https://p2333.github.io/">Tianyu Pang</a>, advised by <a href="https://yanshuicheng.info/">Prof. Shuicheng Yan</a> and <a href="https://linmin.me/">Min Lin</a>.</div>
-          </div>
-          <div class="tl-item">
-            <div class="exp-org">TikTok / ByteDance AI Lab, Singapore</div>
-            <div class="exp-meta">Research Intern &nbsp;·&nbsp; 2021 - 2022</div>
-            <div class="exp-detail">With <a href="https://henghuiding.github.io/">Henghui Ding</a> and <a href="https://huanghoujing.github.io/">Houjing Huang</a>.</div>
-          </div>
-          <div class="tl-item">
-            <div class="exp-org">ST Engineering - SUTD Cyber Security Lab</div>
-            <div class="exp-meta">Student Researcher &nbsp;·&nbsp; 2020 - 2021</div>
-            <div class="exp-detail">Advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Prof. Ngai-Man Cheung</a>.</div>
-          </div>
-          <div class="tl-item">
-            <div class="exp-org">University of Hong Kong</div>
-            <div class="exp-meta">Research Assistant &nbsp;·&nbsp; 2018 - 2019</div>
-            <div class="exp-detail">Advised by <a href="https://www.eee.hku.hk/~vtam/">Dr. Vincent Tam</a>.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section class="band">
+  <div class="inner">
 
     <!-- Service -->
-    <div id="service" class="sec"><h2>Teaching &amp; Service</h2></div>
+    <div id="service" class="sec"><p class="eyebrow">Service</p><h2>Teaching &amp; reviewing.</h2></div>
 
+    <div class="service-grid">
     <div class="service-item">
-      <b>Reviewer</b> — NeurIPS, CVPR, TPAMI, TIP, TIFS, TNNLS, TASL, TMM, TCSVT, CVIU.
+      <b>Reviewer</b> NeurIPS, CVPR, TPAMI, TIP, TIFS, TNNLS, TASL, TMM, TCSVT, CVIU.
     </div>
     <div class="service-item">
-      <b>Teaching Assistant</b> — <a href="https://www.sutd.edu.sg/course/50-021-artificial-intelligence">50.021 Artificial Intelligence</a> and <a href="https://www.sutd.edu.sg/course/50-035-computer-vision/">50.035 Computer Vision</a> at SUTD.
+      <b>Teaching Assistant</b> <a href="https://www.sutd.edu.sg/course/50-021-artificial-intelligence">50.021 Artificial Intelligence</a> and <a href="https://www.sutd.edu.sg/course/50-035-computer-vision/">50.035 Computer Vision</a> at SUTD.
+    </div>
     </div>
 
-  </div><!-- /wrap -->
+  </div>
+  </section>
 
-  <footer>Template inspired by <a href="http://www.cs.berkeley.edu/~barron/" style="color:var(--faint);border-bottom:1px solid var(--rule);">Jon Barron</a>. &copy; <span id="yr"></span> Yunqing Zhao.</footer>
+  <footer>Template inspired by <a href="https://jonbarron.info/">Jon Barron</a>. &copy; <span id="yr"></span> Yunqing Zhao.</footer>
   <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script>
+    (function () {
+      var links = [].slice.call(document.querySelectorAll('.nav-links a'));
+      var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+      var queued = false;
+      function update() {
+        queued = false;
+        var line = window.innerHeight * 0.35, cur = -1;
+        secs.forEach(function (el, i) { if (el && el.getBoundingClientRect().top < line) cur = i; });
+        links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+      }
+      window.addEventListener('scroll', function () {
+        if (!queued) { queued = true; requestAnimationFrame(update); }
+      }, { passive: true });
+      update();
+    })();
+    (function () {
+      var bar = document.querySelector('.pub-filter');
+      if (!bar) return;
+      var rows = [].slice.call(document.querySelectorAll('.pub-row[data-ch]'));
+      var btns = [].slice.call(bar.querySelectorAll('button'));
+      function apply(f) {
+        btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-f') === f)); });
+        rows.forEach(function (r) { r.hidden = f !== 'all' && r.getAttribute('data-ch') !== f; });
+      }
+      btns.forEach(function (b) {  // counts follow the papers on the page
+        var f = b.getAttribute('data-f');
+        b.querySelector('span').textContent = rows.filter(function (r) { return f === 'all' || r.getAttribute('data-ch') === f; }).length;
+      });
+      bar.hidden = false;
+      bar.addEventListener('click', function (e) {
+        var b = e.target.closest('button');
+        if (b) apply(b.getAttribute('data-f'));
+      });
+      // a link to a paper that is filtered out resets the filter first
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href^="#p-"]');
+        var row = a && document.querySelector(a.getAttribute('href'));
+        if (row && row.hidden) apply('all');
+      });
+    })();
+  </script>
 
   <script type="text/javascript">
     var sc_project=11673319; var sc_invisible=1; var sc_security="327094c7";
   </script>
   <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-  <noscript><div class="statcounter"><a href="http://statcounter.com/" target="_blank"><img class="statcounter" src="//c.statcounter.com/11673319/0/327094c7/1/" alt=""></a></div></noscript>
+  <noscript><div class="statcounter"><a href="https://statcounter.com/" target="_blank" rel="noopener"><img class="statcounter" src="https://c.statcounter.com/11673319/0/327094c7/1/" alt=""></a></div></noscript>
 
 </body>
 </html>
