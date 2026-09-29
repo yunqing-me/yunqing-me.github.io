@@ -796,7 +796,7 @@
         </div>
         <h3 class="ch-title">Multimodal LLMs &amp; tool use</h3>
         <p class="ch-lede"><b>Let the model build its context.</b> Pixels, time and code, turned into evidence it can read.</p>
-        <p class="ch-story">Today&rsquo;s multimodal models don&rsquo;t just read their context; they have to build it. Pixels must become tokens a language model can read and write: a vision encoder pretrained to speak (<em>GenLIP</em>), and segmentation masks written as compact text (<em>Text4Seg++</em>). A long video mixes timestamps, saliency and captions, so each kind of token gets its own expert (<em>TimeExpert</em>). One model can even compose another&rsquo;s context: an MLLM reasons first, then writes the instruction a diffusion transformer draws from (<em>ThinkGen</em>). And when one look isn&rsquo;t enough, the model writes and runs code that draws boxes, lines and plots back into its own context, with a reward that keeps it from calling tools it doesn&rsquo;t need (<em>CodeDance</em>). This body of work also contributed training data and evaluation to <a href="https://arxiv.org/abs/2609.28554">Pistis</a>, a family of 27B and 9B multimodal models.</p>
+        <p class="ch-story">Today&rsquo;s multimodal models don&rsquo;t just read their context; they have to build it. Pixels must become tokens a language model can read and write: a vision encoder pretrained to speak (<em>GenLIP</em>), and segmentation masks written as compact text (<em>Text4Seg++</em>). A long video mixes timestamps, saliency and captions, so each kind of token gets its own expert (<em>TimeExpert</em>). One model can even compose another&rsquo;s context: an MLLM reasons first, then writes the instruction a diffusion transformer draws from (<em>ThinkGen</em>). And when one look isn&rsquo;t enough, the model writes and runs code that draws boxes, lines and plots back into its own context, with a reward that keeps it from calling tools it doesn&rsquo;t need (<em>CodeDance</em>). This body of work also contributed long-horizon training data and evaluation to <a href="https://arxiv.org/abs/2609.28554">Pistis</a>, a family of 27B and 9B multimodal models.</p>
         <div class="works">
           <a class="work feature" href="#p-codedance">
             <img class="work-img" src="img/codedance_pipe.jpeg" alt="" loading="lazy">
@@ -835,7 +835,7 @@
             <span class="work-kind">Data &amp; evaluation</span>
             <span class="work-title">Pistis Technical Report</span>
             <span class="work-take">27B and 9B multimodal models trained with IDRL &mdash; alternating on-policy distillation and RL in one loop &mdash; for stronger reasoning and long-horizon agentic tasks.</span>
-            <span class="work-meta"><b>Technical Report</b> &middot; training data &amp; evaluation</span>
+            <span class="work-meta"><b>Technical Report</b> &middot; long-horizon training data &amp; evaluation</span>
           </a>
         </div>
       </article>
@@ -853,13 +853,13 @@
             <span class="work-kind">Attack through the image</span>
             <span class="work-title">On Evaluating Adversarial Robustness of Large Vision-Language Models</span>
             <span class="work-take">Targeted attacks crafted on CLIP and BLIP transfer to open VLMs, and black-box queries make them stronger.</span>
-            <span class="work-meta"><b>NeurIPS 2023</b> &middot; first author <span class="hl-badge" title="Google Scholar, Sep 2026">600+ citations</span></span>
+            <span class="work-meta"><b>NeurIPS 2023</b> &middot; first author <span class="hl-badge" title="Google Scholar">600+ citations</span></span>
           </a>
           <a class="work" href="#p-watermark">
             <span class="work-kind">A key in the prompt</span>
             <span class="work-title">A Recipe for Watermarking Diffusion Models</span>
             <span class="work-take">One recipe, two settings: a hidden trigger for text-to-image models, and a binary string carried in the training data for unconditional ones.</span>
-            <span class="work-meta"><b>Technical Report</b> &middot; <b>US Patent</b> &middot; first author <span class="hl-badge" title="Google Scholar, Sep 2026">250+ citations</span></span>
+            <span class="work-meta"><b>Technical Report</b> &middot; <b>US Patent</b> &middot; first author <span class="hl-badge" title="Google Scholar">250+ citations</span></span>
           </a>
         </div>
       </article>
@@ -877,13 +877,13 @@
             <span class="work-kind">Diversity</span>
             <span class="work-title">A Closer Look at Few-shot Image Generation</span>
             <span class="work-take">In a unified testbed, the main failure of few-shot adaptation is lost diversity. A mutual-information objective keeps it.</span>
-            <span class="work-meta"><b>CVPR 2022</b> &middot; first author <span class="hl-badge" title="Google Scholar, Sep 2026">100+ citations</span></span>
+            <span class="work-meta"><b>CVPR 2022</b> &middot; first author <span class="hl-badge" title="Google Scholar">100+ citations</span></span>
           </a>
           <a class="work" href="#p-adam">
             <span class="work-kind">What to keep</span>
             <span class="work-title">Few-Shot Image Generation via Adaptation-Aware Kernel Modulation</span>
             <span class="work-take">Far from the source domain, state-of-the-art methods do no better than a simple baseline. AdAM selects the source knowledge that matters for the target, parameter-efficiently.</span>
-            <span class="work-meta"><b>NeurIPS 2022</b> &middot; co-first author</span>
+            <span class="work-meta"><b>NeurIPS 2022</b> &middot; first author</span>
           </a>
           <a class="work" href="#p-rick">
             <span class="work-kind">What to forget</span>
@@ -901,14 +901,14 @@
             <span class="work-kind">Side note &middot; distillation</span>
             <span class="work-title">Revisiting Label Smoothing &amp; Knowledge Distillation Compatibility</span>
             <span class="work-take">What does a teacher&rsquo;s output actually carry? Systematic diffusion erodes a label-smoothed teacher&rsquo;s benefit at high temperature; at low temperature, systematic diffusion reliably produces strong students.</span>
-            <span class="work-meta"><b>ICML 2022</b> &middot; co-second author <span class="hl-badge">Spotlight</span></span>
+            <span class="work-meta"><b>ICML 2022</b> &middot; equal contribution <span class="hl-badge">Spotlight</span></span>
           </a>
         </div>
       </article>
 
       <div class="prelude" id="prelude">
         <span class="tag">Prelude &middot; 2020</span>
-        <p>Two seeds. Explanation-guided training helped cross-domain few-shot classifiers generalize from a handful of examples (<a href="https://ieeexplore.ieee.org/document/9412941">ICPR</a>, <a href="https://github.com/SunJiamei/few-shot-lrp-guided">code</a>) <span class="hl-badge" title="Google Scholar, Sep 2026">150+ citations</span>, and a sparse adversarial attack on object detectors placed 10th of 1,701 in the CIKM AnalytiCup (<a href="https://ceur-ws.org/Vol-2881/paper5.pdf">paper</a>, <a href="https://github.com/invoker-LL/L0-attack-on-object-detector-NMS">code</a>). The first grew into <a class="c1" href="#ch1">Chapter 01</a>, the second into <a class="c2" href="#ch2">Chapter 02</a>.</p>
+        <p>Two seeds. Explanation-guided training helped cross-domain few-shot classifiers generalize from a handful of examples (<a href="https://ieeexplore.ieee.org/document/9412941">ICPR</a>, <a href="https://github.com/SunJiamei/few-shot-lrp-guided">code</a>) <span class="hl-badge" title="Google Scholar">150+ citations</span>, and a sparse adversarial attack on object detectors placed 10th of 1,701 in the CIKM AnalytiCup (<a href="https://ceur-ws.org/Vol-2881/paper5.pdf">paper</a>, <a href="https://github.com/invoker-LL/L0-attack-on-object-detector-NMS">code</a>). The first grew into <a class="c1" href="#ch1">Chapter 01</a>, the second into <a class="c2" href="#ch2">Chapter 02</a>.</p>
       </div>
 
     </div>
@@ -937,7 +937,7 @@
             <div class="exp-body">
               <div class="exp-org">TikTok / ByteDance, Singapore<a class="exp-ch c3" href="#ch3">03 &middot; Constructed context</a></div>
               <div class="exp-meta"><span class="role">Senior Research Scientist <span class="when">Jan &ndash; Jun 2026</span></span><span class="role">Research Scientist <span class="when">Jul 2024 &ndash; Dec 2025</span></span></div>
-              <div class="exp-detail">With <a href="https://songbai.site/">Song Bai</a> and <a href="https://speedinghzl.github.io/">Zilong Huang</a>. Contributed training data and evaluation to Pistis (<a href="https://arxiv.org/abs/2609.28554"><b>Technical Report</b></a>), a family of 27B and 9B multimodal models.</div>
+              <div class="exp-detail">With <a href="https://songbai.site/">Song Bai</a> and <a href="https://speedinghzl.github.io/">Zilong Huang</a>. Contributed long-horizon training data and evaluation to Pistis (<a href="https://arxiv.org/abs/2609.28554"><b>Technical Report</b></a>), a family of 27B and 9B multimodal models.</div>
             </div>
             <div class="exp-date">Jul 2024 &ndash; Jun 2026</div>
           </div>
@@ -1048,7 +1048,7 @@
         <div class="pub-authors">Heyun Chen, Xiaohan Lan, Jiaxi Li, &hellip;, Xudong Zhang, <b>Yunqing Zhao</b>, Shuai Zheng</div>
         <div class="pub-venue"><b>Technical Report</b>, 2026</div>
         <details class="pub-more"><summary>Summary</summary>
-        <div class="pub-desc">Pistis is a family of 27B and 9B multimodal models built on Qwen3. Post-training uses Interleaved Distillation and RL (IDRL) &ndash; alternating on-policy distillation and RL within a single loop rather than sequentially &ndash; for stronger reasoning and long-horizon agentic tasks. Contribution: training data construction and evaluation.</div>
+        <div class="pub-desc">Pistis is a family of 27B and 9B multimodal models built on Qwen3. Post-training uses Interleaved Distillation and RL (IDRL) &ndash; alternating on-policy distillation and RL within a single loop rather than sequentially &ndash; for stronger reasoning and long-horizon agentic tasks. Contribution: long-horizon training data construction and evaluation.</div>
         </details>
         <div class="links">
           <a href="https://arxiv.org/abs/2609.28554">Paper</a>
@@ -1117,7 +1117,7 @@
       <div>
         <div class="pub-title">A Recipe for Watermarking Diffusion Models</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
-        <div class="pub-venue"><b>Technical Report</b>, 2023 &nbsp;·&nbsp; <b>US Patent</b>, 2024 <span class="hl-badge" title="Google Scholar, Sep 2026">250+ citations</span></div>
+        <div class="pub-venue"><b>Technical Report</b>, 2023 &nbsp;·&nbsp; <b>US Patent</b>, 2024 <span class="hl-badge" title="Google Scholar">250+ citations</span></div>
         <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">We derive a recipe for efficiently watermarking state-of-the-art diffusion models (e.g., Stable Diffusion), via training from scratch or fine-tuning. Our recipe is straightforward but involves empirically ablated implementation details, providing a solid foundation for future research on watermarking DMs.</div>
         </details>
@@ -1135,7 +1135,7 @@
       <div>
         <div class="pub-title">On Evaluating Adversarial Robustness of Large Vision-Language Models</div>
         <div class="pub-authors"><b>Yunqing Zhao<sup>*</sup></b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>*†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://zhenxuan00.github.io/">C. Li</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
-        <div class="pub-venue">Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2023 <span class="hl-badge" title="Google Scholar, Sep 2026">600+ citations</span></div>
+        <div class="pub-venue">Conference on Neural Information Processing Systems (<b>NeurIPS</b>), 2023 <span class="hl-badge" title="Google Scholar">600+ citations</span></div>
         <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">Large VLMs achieve unprecedented performance with visual inputs, but multimodal generation exacerbates safety concerns. We evaluate the adversarial robustness of open-source VLMs (e.g., MiniGPT-4, LLaVA, BLIP, UniDiffuser) in the most realistic high-risk setting, where adversaries have only black-box access and seek to elicit targeted responses.</div>
         </details>
@@ -1225,7 +1225,7 @@
       <div>
         <div class="pub-title">A Closer Look at Few-shot Image Generation</div>
         <div class="pub-authors"><b>Yunqing Zhao</b>, <a href="https://henghuiding.github.io/">Henghui Ding</a>, <a href="https://huanghoujing.github.io/">Houjing Huang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
-        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2022 <span class="hl-badge" title="Google Scholar, Sep 2026">100+ citations</span></div>
+        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2022 <span class="hl-badge" title="Google Scholar">100+ citations</span></div>
         <details class="pub-more"><summary>Summary</summary>
         <div class="pub-desc">We analyze existing few-shot image generation algorithms in a unified testbed and find that diversity degradation is the major issue during few-shot target adaptation. Our mutual information based algorithm alleviates this issue and achieves state-of-the-art performance on few-shot image generation tasks.</div>
         </details>
