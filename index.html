@@ -847,7 +847,7 @@
         </div>
         <h3 class="ch-title">AI safety for multimodal models</h3>
         <p class="ch-lede"><b>Guard what the model reads.</b> An open input is an attack surface, and a key.</p>
-        <p class="ch-story">If a context can teach a model, it can also mislead it. Once large models read images and prompts at inference time, the context became an interface, and whoever writes into it can steer the model. With only black-box access, an adversarial image makes open VLMs such as MiniGPT-4 and LLaVA give the attacker&rsquo;s chosen response (<em>AttackVLM</em>). The same channel can serve the owner: a trigger prompt only they know makes a watermarked Stable Diffusion draw a predefined watermark, such as a scannable QR code, while other prompts behave as before (<em>WatermarkDM</em>, US patent).</p>
+        <p class="ch-story">If a context can teach a model, it can also mislead it. Once large models read images and prompts at inference time, the context became an interface, and whoever writes into it can steer the model. With only black-box access, an adversarial image makes open VLMs such as MiniGPT-4 and LLaVA give the attacker&rsquo;s chosen response (<a href="https://yunqing-me.github.io/AttackVLM/" target="_blank" rel="noopener"><em>AttackVLM</em></a>). The same channel can serve the owner: a trigger prompt only they know makes a watermarked Stable Diffusion draw a predefined watermark, such as a scannable QR code, while other prompts behave as before (<em>WatermarkDM</em>, US patent).</p>
         <div class="works">
           <a class="work" href="#p-attackvlm">
             <span class="work-kind">Attack through the image</span>
@@ -859,7 +859,7 @@
             <span class="work-kind">A key in the prompt</span>
             <span class="work-title">A Recipe for Watermarking Diffusion Models</span>
             <span class="work-take">One recipe, two settings: a hidden trigger for text-to-image models, and a binary string carried in the training data for unconditional ones.</span>
-            <span class="work-meta"><b>Technical Report</b> &middot; <b>US Patent</b> &middot; first author <span class="hl-badge" title="Google Scholar">250+ citations</span></span>
+            <span class="work-meta"><b>Technical Report</b> &middot; <b>US Patent</b> <br>first author <span class="hl-badge" title="Google Scholar">250+ citations</span></span>
           </a>
         </div>
       </article>
