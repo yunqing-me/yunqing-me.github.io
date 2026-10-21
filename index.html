@@ -61,6 +61,8 @@
     .award { color: var(--rubine-red); font-weight: 700; }
     .citation-count { white-space: nowrap; }
     .integration-note a:hover, a.award:hover { color: #990041; }
+    .integration-note a.affiliation-link { color: inherit; }
+    .integration-note a.affiliation-link:hover { text-decoration: underline; }
     .support-section { padding: 27px 16px 0; }
     .experience { list-style: none; margin: 0; padding: 0; }
     .experience-row { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; padding: 14px 0; align-items: center; }
@@ -238,8 +240,9 @@
           <div class="venue"><strong>Conference on Neural Information Processing Systems (NeurIPS), <span class="venue-place">New Orleans, USA, 2023.</span></strong></div>
           <div class="paper-meta"><a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=5937308252715370580,11503029870944142826,10569921424770981463,17149303380661830202" title="Google Scholar: 627 citations, checked 21 October 2026">600+ citations</a></div>
           <div class="resources"><a href="https://arxiv.org/pdf/2305.16934.pdf">paper</a> / <a href="https://yunqing-me.github.io/AttackVLM/">project page</a> / <a href="https://github.com/yunqing-me/AttackVLM">code</a></div>
-          <p class="description">Adversarial images transfer to open vision-language models and elicit targeted responses, even when attackers have only black-box access.</p>
-          <p class="integration-note">Highlighted in <a href="https://www.turing.ac.uk/sites/default/files/2024-06/the_impact_of_large_language_models_in_finance_-_towards_trustworthy_adoption_1.pdf#page=12" title="The Impact of Large Language Models in Finance: Towards Trustworthy Adoption">The Alan Turing Institute's report on LLMs in finance</a>.</p>
+          <p class="description">AttackVLM: Black-box red teaming of multimodal foundation models, exposing cross-modal vulnerabilities through transferable visual attacks.</p>
+          <p class="integration-note">Integrated in <a href="https://www.microsoft.com/en-us/research/publication/mmdt-decoding-the-trustworthiness-and-safety-of-multimodal-foundation-models/" title="MMDT (ICLR 2025), Appendix H.2: AttackVLM generates adversarial images for benchmark construction">MMDT</a> (<a class="affiliation-link" href="https://www.microsoft.com/en-us/research/publication/mmdt-decoding-the-trustworthiness-and-safety-of-multimodal-foundation-models/">Microsoft Research</a>) and <a href="https://github.com/klea-ziu/MirrorCheck#attacks" title="MirrorCheck uses the original AttackVLM implementations for adversarial evaluation; coauthor Nikita Durasov is affiliated with NVIDIA">MirrorCheck</a> (NVIDIA).</p>
+          <p class="integration-note">Highlighted in <a href="https://www.turing.ac.uk/sites/default/files/2024-06/the_impact_of_large_language_models_in_finance_-_towards_trustworthy_adoption_1.pdf#page=12" title="The Impact of Large Language Models in Finance: Towards Trustworthy Adoption; published 27 March 2024">The Alan Turing Institute's report on LLMs in finance</a> (2024).</p>
         </div>
       </article>
 
@@ -250,13 +253,11 @@
         <div class="paper-copy">
           <h4 id="p-watermark-title"><a href="https://yunqing-me.github.io/WatermarkDM/">A Recipe for Watermarking Diffusion Models</a></h4>
           <div class="authors"><b>Yunqing Zhao</b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
-          <div class="venue"><strong>Technical Report, 2023.</strong></div>
-          <div class="paper-meta">US Patent, 2024 &nbsp;·&nbsp; <a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=2646068845536634567,11165214097765165877,11950577136708902021" title="Google Scholar: 287 citations, checked 21 October 2026">250+ citations</a></div>
+          <div class="venue"><strong>Technical Report, 2023</strong> &nbsp;·&nbsp; US Patent, 2024 &nbsp;·&nbsp; <a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=2646068845536634567,11165214097765165877,11950577136708902021" title="Google Scholar: 287 citations, checked 21 October 2026">250+ citations</a></div>
           <div class="resources"><a href="https://arxiv.org/abs/2303.10137">paper</a> / <a href="https://yunqing-me.github.io/WatermarkDM/">project page</a> / <a href="https://github.com/yunqing-me/WatermarkDM">code</a></div>
           <p class="description">A practical recipe for watermarking diffusion models through training or fine-tuning, including hidden trigger prompts for text-to-image models.</p>
-          <p class="integration-note">Highlighted by <a href="https://x.com/DrJimFan/status/1637877021379555328">@DrJimFan</a> and <a href="https://x.com/_akhaliq/status/1637623816460312578">@_akhaliq</a> for <span class="award">provenance tracking</span> in AI-generated images.</p>
-          <p class="integration-note">Highlighted in a <a href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2023/757583/EPRS_BRI%282023%29757583_EN.pdf#page=7">European Parliament briefing</a> and the <a href="https://assets.publishing.service.gov.uk/media/6655982fdc15efdddf1a842f/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf#page=77" title="International Scientific Report on the Safety of Advanced AI: Interim Report">international AI safety report</a>.</p>
-          <p class="integration-note">Course reading for <a href="https://www.cs.umd.edu/class/spring2024/cmsc720/#:~:text=A%20Recipe%20for%20Watermarking%20Diffusion%20Models">University of Maryland's CMSC 720</a> (Spring 2024).</p>
+          <p class="integration-note">Highlighted in <a href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2023/757583/EPRS_BRI%282023%29757583_EN.pdf#page=7" title="Generative AI and watermarking; European Parliamentary Research Service (EPRS); published 13 December 2023">European Parliament briefing</a> (2023) and the <a href="https://assets.publishing.service.gov.uk/media/6716673b96def6d27a4c9b24/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf#page=77" title="International Scientific Report on the Safety of Advanced AI: Interim Report; published 17 May 2024; chaired by Yoshua Bengio and published ahead of the AI Seoul Summit (21-22 May 2024, Seoul, South Korea)">International Scientific Report on the Safety of Advanced AI</a> (AI Seoul Summit, Seoul, 2024).</p>
+          <p class="integration-note">Highlighted in <a href="https://web.archive.org/web/20240926184921id_/https://mig.nist.gov/MFC/Web/Papers/Workshop2023/OpenMFC20231115_JunCheng.pdf#page=52" title="NIST (U.S. Department of Commerce), OpenMFC 2023 invited keynote by Jun-Cheng Chen; slide 53 (PDF page 52)">NIST's (U.S. Department of Commerce) OpenMFC workshop</a> (2023).</p>
         </div>
       </article>
 
@@ -298,7 +299,7 @@
           <div class="paper-meta"><strong class="award">Spotlight</strong></div>
           <div class="resources"><a href="https://proceedings.mlr.press/v162/chandrasegaran22a/chandrasegaran22a.pdf">paper</a> / <a href="https://keshik6.github.io/revisiting-ls-kd-compatibility/">project page</a> / <a href="https://github.com/sutd-visual-computing-group/LS-KD-compatibility">code</a></div>
           <p class="description">Systematic diffusion explains when label smoothing helps or hurts knowledge distillation; low-temperature transfer preserves the benefits of a label-smoothed teacher.</p>
-          <p class="integration-note">Integrated into <a href="https://github.com/NVlabs/HCL/blob/main/utils/losses.py" title="NVIDIA Research's Heterogeneous Continual Learning (CVPR 2023)">NVIDIA Research's HCL</a>.</p>
+          <p class="integration-note"><span class="award">Low-temp distillation</span> with label-smoothed teachers integrated in <a href="https://github.com/NVlabs/HCL/blob/main/utils/losses.py" title="NVIDIA Research's Heterogeneous Continual Learning (CVPR 2023); Section 3.2.1 adopts low-temperature distillation with label-smoothed teachers">HCL (NVIDIA Research)</a>.</p>
         </div>
       </article>
 
