@@ -38,12 +38,21 @@
     .publications { padding-top: 4px; }
     .research-group + .research-group { margin-top: 24px; }
     .research-group-title { font-size: 16px; font-weight: 400; font-style: italic; margin: 0; padding: 8px 16px 10px; }
+    .industry-work { margin: 16px 16px 24px; padding: 20px 22px; border-radius: 16px; background: #f1f3f6; }
+    .industry-work-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; margin-bottom: 8px; }
+    .industry-work h4 { font-size: 14px; margin: 0; }
+    .industry-work-date { margin-left: auto; white-space: nowrap; }
+    .impact-metric { white-space: nowrap; }
+    .industry-work p { margin: 0; }
+    .industry-work .resources { margin-top: 8px; }
     .publication { display: grid; grid-template-columns: 160px minmax(0, 1fr); column-gap: 24px; padding: 20px 16px; align-items: center; }
     .highlight { background: #ffffd0; }
     .paper-image { display: block; }
     .paper-image img { display: block; width: 160px; height: 120px; object-fit: contain; }
     .paper-copy h4 { font-size: 14px; font-weight: 700; line-height: inherit; margin: 0; }
-    .authors, .venue, .resources { margin-top: 1px; }
+    .authors, .resources, .paper-meta { margin-top: 1px; }
+    .venue { margin-top: 3px; }
+    .venue-place { white-space: nowrap; }
     .authors b { font-weight: 700; }
     sup { font-size: .72em; line-height: 0; vertical-align: super; }
     .description { margin: 12px 0 0; }
@@ -141,7 +150,7 @@
         <div class="paper-copy">
           <h4 id="p-codedance-title"><a href="https://codedance-vl.github.io/">CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning</a></h4>
           <div class="authors">Qi Song<sup>*</sup>, Honglin Li<sup>*</sup>, Y. Yu, H. Zhou, L. Yang, Song Bai, Qi She, Zilong Huang<sup>†</sup>, <b>Yunqing Zhao<sup>†</sup></b></div>
-          <div class="venue"><em>CVPR</em>, 2026</div>
+          <div class="venue"><strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), <span class="venue-place">Denver, USA, 2026.</span></strong></div>
           <div class="resources"><a href="https://arxiv.org/abs/2512.17312">paper</a> / <a href="https://codedance-vl.github.io/">project page</a> / <a href="https://github.com/CodeDance-VL/CodeDance">code</a> / <a href="https://huggingface.co/datasets/Peterwatwec/CodeDance-SFT">sft data</a> / <a href="https://huggingface.co/datasets/Peterwatwec/CodeDance-RL">rl data</a></div>
           <p class="description"><strong class="award">Thinking with images through adaptive visual coding.</strong> A multimodal model learns when and how to use tools, writes executable code, and checks the visual evidence it creates. <strong>Tech lead and corresponding author.</strong></p>
         </div>
@@ -154,7 +163,7 @@
         <div class="paper-copy">
           <h4 id="p-text4seg-title"><a href="https://ieeexplore.ieee.org/abstract/document/11479916">Text4Seg++: Advancing Image Segmentation via Generative Language Modeling</a></h4>
           <div class="authors"><a href="https://mc-lan.github.io/">Mengcheng Lan</a>, Chaofeng Chen, Jiaxing Xu, Zongrui Li, Yiping Ke, Xudong Jiang, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao<sup>†</sup></b>, <a href="https://songbai.site/">Song Bai</a></div>
-          <div class="venue"><em>IEEE TPAMI</em>, 2026</div>
+          <div class="venue"><strong>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2026.</strong></div>
           <div class="resources"><a href="https://ieeexplore.ieee.org/abstract/document/11479916">paper</a> / <a href="https://arxiv.org/abs/2509.06321">arxiv</a></div>
           <p class="description"><strong class="award">Token-efficient segmentation through generative language modeling.</strong> Compact textual mask representations reduce sequence length and speed up inference, without a separate mask decoder. <strong>Tech lead and corresponding author.</strong></p>
         </div>
@@ -167,7 +176,7 @@
         <div class="paper-copy">
           <h4 id="p-pistis-title"><a href="https://pististeam.github.io/">Pistis Technical Report</a></h4>
           <div class="authors">Heyun Chen, Xiaohan Lan, Jiaxi Li, …, Xudong Zhang, <b>Yunqing Zhao</b>, Shuai Zheng</div>
-          <div class="venue"><em>Technical Report</em>, 2026</div>
+          <div class="venue"><strong>Technical Report, 2026.</strong></div>
           <div class="resources"><a href="https://arxiv.org/abs/2609.28554">paper</a> / <a href="https://pististeam.github.io/">project page</a></div>
           <p class="description">Multimodal models trained with interleaved distillation and reinforcement learning for reasoning and long-horizon agentic tasks.</p>
           <p class="integration-note">My contribution: post-training trajectory synthesis and benchmark evaluation for long-horizon agentic multimodal understanding.</p>
@@ -181,7 +190,7 @@
         <div class="paper-copy">
           <h4 id="p-genlip-title"><a href="https://yanfangcs.github.io/vitspeak/">Let ViT Speak: Generative Language-Image Pre-training</a></h4>
           <div class="authors">Yan Fang<sup>*</sup>, <a href="https://mc-lan.github.io/">Mengcheng Lan<sup>*</sup></a>, <a href="https://speedinghzl.github.io/">Zilong Huang<sup>†</sup></a>, Weixian Lei, <b>Yunqing Zhao</b>, Yujie Zhong, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, Qi She, Yao Zhao, Yunchao Wei<sup>†</sup></div>
-          <div class="venue"><em>ECCV</em>, 2026</div>
+          <div class="venue"><strong>European Conference on Computer Vision (ECCV), <span class="venue-place">Malmö, Sweden, 2026.</span></strong></div>
           <div class="resources"><a href="https://arxiv.org/abs/2605.00809">paper</a> / <a href="https://yanfangcs.github.io/vitspeak/">project page</a> / <a href="https://github.com/YanFangCS/GenLIP">code</a> / <a href="https://huggingface.co/collections/YanFang/genlip">models</a></div>
           <p class="description">GenLIP pretrains the vision encoder as a language generator: the ViT reads image patches and learns to predict the accompanying text. This autoregressive objective aligns visual pretraining with LLMs, without a contrastive loss or a separate text decoder.</p>
           <p class="integration-note">Training integrated into <a href="https://github.com/mlfoundations/open_clip/blob/main/src/open_clip/task/genlip_task.py">mlfoundations/open_clip</a>, with initial encoder support in <a href="https://github.com/huggingface/pytorch-image-models/pull/2707" title="Initial GenLIP image-encoder support, merged into timm and included in v1.0.28">Hugging Face's timm</a>.</p>
@@ -195,7 +204,7 @@
         <div class="paper-copy">
           <h4 id="p-thinkgen-title"><a href="https://arxiv.org/abs/2512.23568">ThinkGen: Generalized Thinking for Visual Generation</a></h4>
           <div class="authors">Siyu Jiao<sup>*</sup>, Yiheng Lin<sup>*</sup>, Yujie Zhong<sup>†</sup>, Qi She, Wei Zhou, Xiaohan Lan, <a href="https://speedinghzl.github.io/">Zilong Huang</a>, Fei Yu, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao</b>, Yao Zhao, Yunchao Wei<sup>†</sup></div>
-          <div class="venue"><em>CVPR</em>, 2026</div>
+          <div class="venue"><strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), <span class="venue-place">Denver, USA, 2026.</span></strong></div>
           <div class="resources"><a href="https://arxiv.org/abs/2512.23568">paper</a> / <a href="https://github.com/jiaosiyuu/ThinkGen">code</a> / <a href="https://huggingface.co/JSYuuu/ThinkGen">models</a></div>
           <p class="description">A multimodal LLM plans and a diffusion transformer draws; alternating reinforcement learning trains both for visual generation across diverse scenarios.</p>
         </div>
@@ -208,7 +217,8 @@
         <div class="paper-copy">
           <h4 id="p-timeexpert-title"><a href="https://mwxely.github.io/projects/yang2025time/index">TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding</a></h4>
           <div class="authors"><a href="https://mwxely.github.io/">Zuhao Yang</a>, <a href="https://yingchen001.github.io/">Yingchen Yu</a>, <b>Yunqing Zhao</b>, <a href="https://personal.ntu.edu.sg/shijian.lu/">Shijian Lu<sup>†</sup></a>, <a href="https://songbai.site/">Song Bai</a></div>
-          <div class="venue"><em>ICCV</em>, 2025 · <span title="Method, Device, and Medium for Video Temporal Grounding with Mixture-of-Experts">US Patent, 2026</span></div>
+          <div class="venue"><strong>IEEE/CVF International Conference on Computer Vision (ICCV), <span class="venue-place">Honolulu, USA, 2025.</span></strong></div>
+          <div class="paper-meta"><span title="Method, Device, and Medium for Video Temporal Grounding with Mixture-of-Experts">US Patent, 2026</span></div>
           <div class="resources"><a href="https://arxiv.org/abs/2508.01699">paper</a> / <a href="https://mwxely.github.io/projects/yang2025time/index">project page</a></div>
           <p class="description">Task-specific experts improve event modeling for dense video captioning, moment retrieval, and highlight detection.</p>
         </div>
@@ -225,7 +235,8 @@
         <div class="paper-copy">
           <h4 id="p-attackvlm-title"><a href="https://yunqing-me.github.io/AttackVLM/">On Evaluating Adversarial Robustness of Large Vision-Language Models</a></h4>
           <div class="authors"><b>Yunqing Zhao<sup>*</sup></b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>*†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://zhenxuan00.github.io/">C. Li</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
-          <div class="venue"><em>NeurIPS</em>, 2023 &nbsp; <a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=5937308252715370580,11503029870944142826,10569921424770981463,17149303380661830202" title="Google Scholar: 627 citations, checked 21 October 2026">600+ citations</a></div>
+          <div class="venue"><strong>Conference on Neural Information Processing Systems (NeurIPS), <span class="venue-place">New Orleans, USA, 2023.</span></strong></div>
+          <div class="paper-meta"><a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=5937308252715370580,11503029870944142826,10569921424770981463,17149303380661830202" title="Google Scholar: 627 citations, checked 21 October 2026">600+ citations</a></div>
           <div class="resources"><a href="https://arxiv.org/pdf/2305.16934.pdf">paper</a> / <a href="https://yunqing-me.github.io/AttackVLM/">project page</a> / <a href="https://github.com/yunqing-me/AttackVLM">code</a></div>
           <p class="description">Adversarial images transfer to open vision-language models and elicit targeted responses, even when attackers have only black-box access.</p>
           <p class="integration-note">Highlighted in <a href="https://www.turing.ac.uk/sites/default/files/2024-06/the_impact_of_large_language_models_in_finance_-_towards_trustworthy_adoption_1.pdf#page=12" title="The Impact of Large Language Models in Finance: Towards Trustworthy Adoption">The Alan Turing Institute's report on LLMs in finance</a>.</p>
@@ -239,13 +250,23 @@
         <div class="paper-copy">
           <h4 id="p-watermark-title"><a href="https://yunqing-me.github.io/WatermarkDM/">A Recipe for Watermarking Diffusion Models</a></h4>
           <div class="authors"><b>Yunqing Zhao</b>, <a href="https://p2333.github.io/">Tianyu Pang<sup>†</sup></a>, <a href="https://duchao0726.github.io/">Chao Du<sup>†</sup></a>, <a href="https://ml.cs.tsinghua.edu.cn/~xiaoyang/">Xiao Yang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a>, <a href="https://linmin.me/">Min Lin</a></div>
-          <div class="venue"><em>Technical Report</em>, 2023 · US Patent, 2024 &nbsp; <a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=2646068845536634567,11165214097765165877,11950577136708902021" title="Google Scholar: 287 citations, checked 21 October 2026">250+ citations</a></div>
+          <div class="venue"><strong>Technical Report, 2023.</strong></div>
+          <div class="paper-meta">US Patent, 2024 &nbsp;·&nbsp; <a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=2646068845536634567,11165214097765165877,11950577136708902021" title="Google Scholar: 287 citations, checked 21 October 2026">250+ citations</a></div>
           <div class="resources"><a href="https://arxiv.org/abs/2303.10137">paper</a> / <a href="https://yunqing-me.github.io/WatermarkDM/">project page</a> / <a href="https://github.com/yunqing-me/WatermarkDM">code</a></div>
           <p class="description">A practical recipe for watermarking diffusion models through training or fine-tuning, including hidden trigger prompts for text-to-image models.</p>
           <p class="integration-note">Highlighted by <a href="https://x.com/DrJimFan/status/1637877021379555328">@DrJimFan</a> and <a href="https://x.com/_akhaliq/status/1637623816460312578">@_akhaliq</a> for <span class="award">provenance tracking</span> in AI-generated images.</p>
           <p class="integration-note">Highlighted in a <a href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2023/757583/EPRS_BRI%282023%29757583_EN.pdf#page=7">European Parliament briefing</a> and the <a href="https://assets.publishing.service.gov.uk/media/6655982fdc15efdddf1a842f/international_scientific_report_on_the_safety_of_advanced_ai_interim_report.pdf#page=77" title="International Scientific Report on the Safety of Advanced AI: Interim Report">international AI safety report</a>.</p>
-          <p class="integration-note">Course reading for <a href="https://www.cs.umd.edu/class/spring2024/cmsc720/">University of Maryland's CMSC 720</a> (Spring 2024).</p>
+          <p class="integration-note">Course reading for <a href="https://www.cs.umd.edu/class/spring2024/cmsc720/#:~:text=A%20Recipe%20for%20Watermarking%20Diffusion%20Models">University of Maryland's CMSC 720</a> (Spring 2024).</p>
         </div>
+      </article>
+
+      <article class="industry-work" id="tiktok-media-safety" aria-labelledby="tiktok-media-safety-title">
+        <div class="industry-work-heading">
+          <h4 id="tiktok-media-safety-title">Industry impact: Media/Content Safety &amp; Value Alignment at TikTok</h4>
+          <span class="industry-work-date">2024–2026</span>
+        </div>
+        <p>At TikTok, I developed LLM/MLLM workflows and agentic content understanding systems for media safety, frontier risk detection, and policy alignment. Deployed in products serving <strong>over 1K QPS</strong> and reaching <strong>over 1B users worldwide</strong>, these systems delivered a statistically significant <strong class="impact-metric">2%</strong> reduction in the platform-wide user complaint rate. <br>I also received the <strong>2025 ByteDance Staff Award (Individual) for improved user experience</strong>.</p>
+        <div class="resources"><b>References: </b><a href="https://ads.tiktok.com/business">Commercial Ecosystem</a> / <a href="https://newsroom.tiktok.com/new-trust-and-safety-tools-for-creators-families-and-the-tiktok-community?lang=en-GB">Platform Trust &amp; Safety</a></div>
       </article>
 
       </section>
@@ -259,7 +280,7 @@
         <div class="paper-copy">
           <h4 id="p-adam-title"><a href="https://yunqing-me.github.io/AdAM/">Few-Shot Image Generation via Adaptation-Aware Kernel Modulation</a></h4>
           <div class="authors"><b>Yunqing Zhao<sup>*</sup></b>, <a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran<sup>*</sup></a>, <a href="https://miladabd.github.io/">Milad Abdollahzadeh<sup>*</sup></a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
-          <div class="venue"><em>NeurIPS</em>, 2022</div>
+          <div class="venue"><strong>Conference on Neural Information Processing Systems (NeurIPS), <span class="venue-place">New Orleans, USA, 2022.</span></strong></div>
           <div class="resources"><a href="https://arxiv.org/abs/2210.16559">paper</a> / <a href="https://yunqing-me.github.io/AdAM/">project page</a> / <a href="https://github.com/yunqing-me/AdAM">code</a></div>
           <p class="description"><strong>AdAM</strong> uses adaptation-aware kernel modulation to select source knowledge relevant to a target domain, enabling parameter-efficient few-shot image generation.</p>
           <p class="integration-note">Highlighted in <a href="https://mylibrary.sutd.edu.sg/sites/default/files/Impact%40SUTD/2023/LIB_IMPact%40SUTD_February-2023.pdf">SUTD's IMPact research digest</a>.</p>
@@ -273,7 +294,8 @@
         <div class="paper-copy">
           <h4 id="p-lskd-title"><a href="https://keshik6.github.io/revisiting-ls-kd-compatibility/">Revisiting Label Smoothing &amp; Knowledge Distillation Compatibility: What was Missing?</a></h4>
           <div class="authors"><a href="https://keshik6.github.io/">Keshigeyan Chandrasegaran</a>, <a href="https://scholar.google.com.sg/citations?user=9SE3GYMAAAAJ&amp;hl=en">Ngoc-Trung Tran<sup>*</sup></a>, <b>Yunqing Zhao<sup>*</sup></b>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
-          <div class="venue"><em>ICML</em>, 2022 &nbsp; <strong class="award">Spotlight</strong></div>
+          <div class="venue"><strong>International Conference on Machine Learning (ICML), <span class="venue-place">Baltimore, USA, 2022.</span></strong></div>
+          <div class="paper-meta"><strong class="award">Spotlight</strong></div>
           <div class="resources"><a href="https://proceedings.mlr.press/v162/chandrasegaran22a/chandrasegaran22a.pdf">paper</a> / <a href="https://keshik6.github.io/revisiting-ls-kd-compatibility/">project page</a> / <a href="https://github.com/sutd-visual-computing-group/LS-KD-compatibility">code</a></div>
           <p class="description">Systematic diffusion explains when label smoothing helps or hurts knowledge distillation; low-temperature transfer preserves the benefits of a label-smoothed teacher.</p>
           <p class="integration-note">Integrated into <a href="https://github.com/NVlabs/HCL/blob/main/utils/losses.py" title="NVIDIA Research's Heterogeneous Continual Learning (CVPR 2023)">NVIDIA Research's HCL</a>.</p>
@@ -287,7 +309,7 @@
         <div class="paper-copy">
           <h4 id="p-rick-title"><a href="https://yunqing-me.github.io/RICK/">Exploring Incompatible Knowledge Transfer in Few-Shot Image Generation</a></h4>
           <div class="authors"><b>Yunqing Zhao</b>, <a href="https://duchao0726.github.io/">Chao Du</a>, <a href="https://miladabd.github.io/">Milad Abdollahzadeh</a>, <a href="https://p2333.github.io/">Tianyu Pang</a>, <a href="https://linmin.me/">Min Lin</a>, <a href="https://yanshuicheng.info/">Shuicheng Yan</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
-          <div class="venue"><em>CVPR</em>, 2023</div>
+          <div class="venue"><strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), <span class="venue-place">Vancouver, Canada, 2023.</span></strong></div>
           <div class="resources"><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhao_Exploring_Incompatible_Knowledge_Transfer_in_Few-Shot_Image_Generation_CVPR_2023_paper.pdf">paper</a> / <a href="https://yunqing-me.github.io/RICK/">project page</a> / <a href="https://github.com/yunqing-me/RICK">code</a></div>
           <p class="description">Fine-tuning retains source knowledge that conflicts with a new domain. RICK identifies and prunes incompatible filters for few-shot image generation.</p>
           <p class="integration-note">Featured among the <a href="https://www.thepaper.cn/newsDetail_forward_22821808" title="机器之心 × ArXiv Weekly, April 2023">weekly CV paper picks by Synced × ArXiv Weekly</a> (April 2023).</p>
@@ -301,7 +323,7 @@
         <div class="paper-copy">
           <h4 id="p-fsban-title"><a href="https://yunqing-me.github.io/Born-Again-FS/">FS-BAN: Born-Again Networks for Domain Generalization Few-shot Classification</a></h4>
           <div class="authors"><b>Yunqing Zhao</b>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
-          <div class="venue"><em>IEEE TIP</em>, 2023</div>
+          <div class="venue"><strong>IEEE Transactions on Image Processing (TIP), 2023.</strong></div>
           <div class="resources"><a href="https://arxiv.org/abs/2208.10930">paper</a> / <a href="https://yunqing-me.github.io/Born-Again-FS/">project page</a> / <a href="https://github.com/yunqing-me/Born-Again-FS">code</a></div>
           <p class="description">Born-again distillation improves cross-domain few-shot classification without additional parameters or training data.</p>
         </div>
@@ -314,7 +336,8 @@
         <div class="paper-copy">
           <h4 id="p-fsig-title"><a href="https://yunqing-me.github.io/A-Closer-Look-at-FSIG/">A Closer Look at Few-shot Image Generation</a></h4>
           <div class="authors"><b>Yunqing Zhao</b>, <a href="https://henghuiding.github.io/">Henghui Ding</a>, <a href="https://huanghoujing.github.io/">Houjing Huang</a>, <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung<sup>†</sup></a></div>
-          <div class="venue"><em>CVPR</em>, 2022 &nbsp; <a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=9052422555005481095" title="Google Scholar: 120 citations, checked 21 October 2026">100+ citations</a></div>
+          <div class="venue"><strong>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), <span class="venue-place">New Orleans, USA, 2022.</span></strong></div>
+          <div class="paper-meta"><a class="award citation-count" href="https://scholar.google.com/scholar?oi=bibs&amp;hl=en&amp;cites=9052422555005481095" title="Google Scholar: 120 citations, checked 21 October 2026">100+ citations</a></div>
           <div class="resources"><a href="https://arxiv.org/abs/2205.03805">paper</a> / <a href="https://yunqing-me.github.io/A-Closer-Look-at-FSIG/">project page</a> / <a href="https://github.com/yunqing-me/A-Closer-Look-at-FSIG">code</a></div>
           <p class="description">A unified testbed reveals diversity degradation as the main failure of few-shot image generation. A mutual-information objective alleviates it.</p>
         </div>
