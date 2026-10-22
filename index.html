@@ -53,6 +53,7 @@
     .paper-image img { display: block; width: 160px; height: 120px; object-fit: contain; }
     .paper-media { --media-width: 160px; --static-max-height: 120px; --method-ratio: 1100 / 1222; display: grid; gap: 10px; width: var(--media-width); }
     #codedance-media { --method-ratio: 1100 / 1222; }
+    #text4seg-media { --method-ratio: 1737 / 832; }
     #watermark-media { --method-ratio: 2000 / 769; }
     #genlip-media { --method-ratio: 480 / 330; }
     #attackvlm-media { --method-ratio: 480 / 320; }
@@ -125,8 +126,8 @@
       .profile p { margin-bottom: 0; }
       .contact { margin-top: 0; }
       .publication { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-      .publication > .paper-image { width: min(240px, 100%); justify-self: center; }
-      .publication > .paper-image img { width: 100%; height: auto; max-height: 160px; object-fit: contain; }
+      .publication > .paper-image { width: 100%; justify-self: stretch; }
+      .publication > .paper-image img { width: 100%; height: auto; max-height: none; object-fit: contain; object-position: left center; }
       .paper-media { --media-width: min(100%, 360px); --static-max-height: 195px; gap: 12px; justify-self: center; }
       .paper-media[data-layout="layered"] { --media-height: 260px; align-self: start; }
       .experience-row { grid-template-columns: 125px minmax(0, 1fr); gap: 18px; }
@@ -159,7 +160,7 @@
         <h1>Yunqing Zhao</h1>
         <p class="opening">I am an AI Researcher at <a href="https://hy.tencent.ai/">Tencent Hy</a> in Singapore.</p>
         <p class="interests">My research focuses on multimodal reasoning and generation, with an emphasis on efficient learning and reliable behavior. My work has been published at NeurIPS, ICML, ICLR, CVPR, ICCV, and ECCV, and in TIP and TPAMI.</p>
-        <p class="background">Previously, I was a Senior Research Scientist at TikTok / ByteDance. I received my PhD from <a href="https://www.sutd.edu.sg/">SUTD</a> in 2024, advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung</a>, and received the <a href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/winners/gsa-2025/">Outstanding Thesis Award</a> (one of 3 theses selected university-wide).</p>
+        <p class="background">Previously, I was a Senior Research Scientist at <a href="https://lifeattiktok.com/">TikTok</a> / <a href="https://joinbytedance.com/">ByteDance</a>. I received my PhD from <a href="https://www.sutd.edu.sg/">SUTD</a> in 2024, advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung</a>, and received the <a href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/winners/gsa-2025/">Outstanding Thesis Award</a> (one of 3 theses selected university-wide).</p>
         <nav class="contact" aria-label="Contact and profiles">
           <a href="mailto:yunqing.z.0817@gmail.com">Email</a>
           <a href="https://scholar.google.com/citations?user=kQA0x9UAAAAJ&amp;hl=en">Google Scholar</a>
@@ -199,9 +200,17 @@
       </article>
 
       <article class="publication highlight" id="p-text4seg" aria-labelledby="p-text4seg-title">
-        <a class="paper-image" href="https://ieeexplore.ieee.org/abstract/document/11479916" aria-label="Text4Seg++ project">
-          <img src="img/text4seg.jpg" alt="Text4Seg++ research overview" width="160" height="120" loading="lazy">
-        </a>
+        <div class="paper-media" id="text4seg-media" data-layout="layered" data-method-front="false" data-motion-max-width="144" data-mobile-media-height="300">
+          <div class="paper-image motion-figure">
+            <picture>
+              <source media="(prefers-reduced-motion: reduce)" srcset="media/text4seg/figure-6-poster.svg">
+              <img id="text4seg-animation" src="media/text4seg/figure-6-cycle.svg" alt="Text4Seg++ Figure 6 cycles through box-wise semantic descriptors, semantic bricks, and the model architecture" width="600" height="450" loading="lazy" draggable="false">
+            </picture>
+          </div>
+          <button class="paper-image method-figure" id="text4seg-method" type="button" aria-label="Show the Text4Seg++ segmentation comparisons" aria-pressed="false">
+            <img src="media/text4seg/results-five-columns.svg" alt="Original segmentation comparisons for the first five examples, retaining GSVA, Text4Seg, and ground-truth rows" width="1737" height="832" loading="lazy" draggable="false">
+          </button>
+        </div>
         <div class="paper-copy">
           <h4 id="p-text4seg-title"><a href="https://ieeexplore.ieee.org/abstract/document/11479916">Text4Seg++: Advancing Image Segmentation via Generative Language Modeling</a></h4>
           <div class="authors">Mengcheng Lan, Chaofeng Chen, Jiaxing Xu, Zongrui Li, Yiping Ke, Xudong Jiang, Yingchen Yu, <b>Yunqing Zhao<sup>†</sup></b>, Song Bai</div>
@@ -213,7 +222,7 @@
 
       <article class="publication" id="p-pistis" aria-labelledby="p-pistis-title">
         <a class="paper-image" href="https://pististeam.github.io/" aria-label="Pistis project">
-          <img src="img/pistis.jpg" alt="Pistis research overview" width="160" height="120" loading="lazy">
+          <img src="img/pistis-overview.png" alt="Pistis understanding, reasoning, and agentic search results compared with Qwen baselines" width="969" height="621" loading="lazy">
         </a>
         <div class="paper-copy">
           <h4 id="p-pistis-title"><a href="https://pististeam.github.io/">Pistis Technical Report</a></h4>
@@ -250,7 +259,7 @@
 
       <article class="publication" id="p-thinkgen" aria-labelledby="p-thinkgen-title">
         <a class="paper-image" href="https://arxiv.org/abs/2512.23568" aria-label="ThinkGen project">
-          <img src="img/thinkgen.jpg" alt="ThinkGen research overview" width="160" height="120" loading="lazy">
+          <img src="img/thinkgen.jpg" alt="ThinkGen research overview" width="1418" height="426" loading="lazy">
         </a>
         <div class="paper-copy">
           <h4 id="p-thinkgen-title"><a href="https://arxiv.org/abs/2512.23568">ThinkGen: Generalized Thinking for Visual Generation</a></h4>
@@ -263,7 +272,7 @@
 
       <article class="publication" id="p-timeexpert" aria-labelledby="p-timeexpert-title">
         <a class="paper-image" href="https://mwxely.github.io/projects/yang2025time/index" aria-label="TimeExpert project">
-          <img src="img/TimeExpert_teaser.png" alt="TimeExpert research overview" width="160" height="120" loading="lazy">
+          <img src="img/TimeExpert_teaser.png" alt="TimeExpert research overview" width="2000" height="1021" loading="lazy">
         </a>
         <div class="paper-copy">
           <h4 id="p-timeexpert-title"><a href="https://mwxely.github.io/projects/yang2025time/index">TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding</a></h4>
@@ -364,7 +373,7 @@
 
       <article class="publication highlight" id="p-lskd" aria-labelledby="p-lskd-title">
         <a class="paper-image" href="https://keshik6.github.io/revisiting-ls-kd-compatibility/" aria-label="LS-KD project">
-          <img src="img/ls-kd-compatibility.png" alt="LS-KD research overview" width="160" height="120" loading="lazy">
+          <img src="img/ls-kd-compatibility.png" alt="LS-KD research overview" width="2000" height="1481" loading="lazy">
         </a>
         <div class="paper-copy">
           <h4 id="p-lskd-title"><a href="https://keshik6.github.io/revisiting-ls-kd-compatibility/">Revisiting Label Smoothing &amp; Knowledge Distillation Compatibility: What was Missing?</a></h4>
@@ -401,7 +410,7 @@
 
       <article class="publication" id="p-fsban" aria-labelledby="p-fsban-title">
         <a class="paper-image" href="https://yunqing-me.github.io/Born-Again-FS/" aria-label="FS-BAN project">
-          <img src="img/fs-ban-method.png" alt="FS-BAN research overview" width="160" height="120" loading="lazy">
+          <img src="img/fs-ban-method.png" alt="FS-BAN research overview" width="2000" height="541" loading="lazy">
         </a>
         <div class="paper-copy">
           <h4 id="p-fsban-title"><a href="https://yunqing-me.github.io/Born-Again-FS/">FS-BAN: Born-Again Networks for Domain Generalization Few-shot Classification</a></h4>
@@ -492,7 +501,7 @@
         <div class="affiliation">
           <div class="affiliation-logo"><img class="sutd-logo" src="img/logo-sutd.svg" alt="Singapore University of Technology and Design" width="138" height="54" loading="lazy"></div>
         </div>
-        <div class="affiliation-copy"><strong><a href="https://www.sutd.edu.sg/">Singapore University of Technology and Design</a></strong><br><strong>PhD in Computer Science, AI</strong><div class="experience-date">2020–2024</div><div class="experience-detail">Thesis: <em>Data-Efficient Discriminative and Generative Modelling</em>.<br>Advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung</a>.<br><a class="award" href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/winners/gsa-2025/">Outstanding Thesis Award</a> (one of 3 theses selected university-wide)</div></div>
+        <div class="affiliation-copy"><strong><a href="https://www.sutd.edu.sg/">Singapore University of Technology and Design</a></strong><br><strong>PhD in Computer Science</strong><div class="experience-date">2020–2024</div><div class="experience-detail">Thesis: <em>Data-Efficient Discriminative and Generative Modelling</em>.<br>Advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Ngai-Man Cheung</a>.<br><a class="award" href="https://www.sutd.edu.sg/admissions/graduate/graduate-student-awards/winners/gsa-2025/">Outstanding Thesis Award</a> (one of 3 theses selected university-wide)</div></div>
       </li>
       <li class="experience-row">
         <div class="affiliation">
