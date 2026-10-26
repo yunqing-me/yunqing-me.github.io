@@ -88,6 +88,8 @@
     .integration-note { margin: 8px 0 0; font-weight: 700; }
     .integration-note a { color: var(--rubine-red); }
     .award { color: var(--rubine-red); font-weight: 700; }
+    .education .award, .education a.award:hover { color: inherit; }
+    .education a.award:hover { text-decoration: underline; }
     .citation-count { white-space: nowrap; }
     .integration-note a:hover, a.award:hover { color: #990041; }
     .integration-note a.affiliation-link { color: inherit; }
@@ -133,7 +135,7 @@
       .experience-row { grid-template-columns: 125px minmax(0, 1fr); gap: 18px; }
       .affiliation-logo { width: 120px; height: 54px; }
       .affiliation-logo img { max-width: 120px; max-height: 54px; }
-      .affiliation-logo.dual { gap: 8px; }
+      .affiliation-logo.dual { flex-direction: column-reverse; align-items: flex-start; gap: 6px; height: 54px; }
       .affiliation-logo.dual .bytedance-logo { width: 86px; }
       .affiliation-logo.dual .tiktok-logo { width: 22px; height: 22px; }
       .authors, .paper-copy h4, .resources { overflow-wrap: anywhere; }
@@ -146,7 +148,6 @@
       .experience-row { grid-template-columns: 90px minmax(0, 1fr); gap: 16px; }
       .affiliation-logo { width: 90px; height: 48px; }
       .affiliation-logo img { max-width: 86px; max-height: 48px; }
-      .affiliation-logo.dual { flex-direction: column; gap: 6px; height: 54px; }
       .affiliation-logo.dual .bytedance-logo { width: 84px; }
     }
     @media print { .page { max-width: none; } a { color: #1772d0; } .publication { break-inside: avoid; } }
@@ -483,7 +484,7 @@
         <div class="affiliation">
           <div class="affiliation-logo"><img src="img/logo-st-engineering.png" alt="ST Engineering" width="138" height="22" loading="lazy"></div>
         </div>
-        <div class="affiliation-copy"><strong>ST Electronics-SUTD Cyber Security Lab</strong><br><strong>PhD Student Researcher</strong><div class="experience-date">2020–2021</div><div class="experience-detail">Advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Prof. Ngai-Man Cheung</a>.</div></div>
+        <div class="affiliation-copy"><strong>ST Electronics-SUTD Cyber Security Lab</strong><br><strong>Student Researcher</strong><div class="experience-date">2020–2021</div><div class="experience-detail">Advised by <a href="https://www.sutd.edu.sg/profile/cheung-ngai-man/">Prof. Ngai-Man Cheung</a>.</div></div>
       </li>
       <li class="experience-row">
         <div class="affiliation">
@@ -525,10 +526,10 @@
     </section>
 
     <footer id="site-footer">
+      <span>Design inspired by <a href="https://jonbarron.info/">Jon Barron</a>.</span>
       <a class="visitor-link" href="https://mapmyvisitors.com/web/1byty" target="_blank" rel="noopener noreferrer" aria-label="Visitor statistics on MapMyVisitors" title="Visitor map">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"/></svg>
       </a>
-      <span>Design inspired by <a href="https://jonbarron.info/">Jon Barron</a>.</span>
     </footer>
   </main>
   <script>
